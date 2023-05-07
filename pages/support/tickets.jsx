@@ -1,3 +1,5 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 export default function TicketsPage() {
   return <div>Tickets</div>;
 }
