@@ -10,6 +10,7 @@ export default function Home() {
     <>
       <div className="relative w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-400 to-gray-800 opacity-50 z-10"></div>
+        {/* TODO: image */}
         <img
           src="/assets/fslide05.jpg"
           alt="hero section"
