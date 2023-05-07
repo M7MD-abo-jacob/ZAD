@@ -1,0 +1,41 @@
+[
+  {
+    "title": "via_number",
+    "links": [
+      {
+        "title": "0114475361",
+        "href": "tel:0114475361"
+      },
+      {
+        "title": "0114475362",
+        "href": "tel:0114475362"
+      },
+      {
+        "title": "0114475363",
+        "href": "tel:0114475363"
+      },
+      {
+        "title": "0944000702",
+        "href": "tel:0944000702"
+      }
+    ]
+  },
+  {
+    "title": "via_email",
+    "links": [
+      {
+        "title": "support@zad.sy",
+        "href": "mailto:support@zad.sy"
+      }
+    ]
+  },
+  {
+    "title": "via_facebook",
+    "links": [
+      {
+        "title": "ZADISP",
+        "href": "https://www.facebook.com/ZADISP"
+      }
+    ]
+  }
+]

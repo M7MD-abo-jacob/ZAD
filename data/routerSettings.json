@@ -1,0 +1,26 @@
+[
+  {
+    "setting": "Protocol",
+    "value": "Ppp over Ethernet (pppoe)"
+  },
+  {
+    "setting": "Multiplexing",
+    "value": "LLC"
+  },
+  {
+    "setting": "VPI",
+    "value": "8"
+  },
+  {
+    "setting": "VCI",
+    "value": "35"
+  },
+  {
+    "setting": "username",
+    "value": "username@zad.sy"
+  },
+  {
+    "setting": "password",
+    "value": "your password"
+  }
+]

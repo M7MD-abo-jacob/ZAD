@@ -1,27 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
+html {
+  --light-clr: 249, 249, 249;
+  --light-muted-clr: 245, 253, 255;
+  --dark-clr: 0, 3, 10;
+  --dark-muted-clr: 45, 51, 63;
+  --primary-clr: 0, 176, 240;
+  --accent-clr: 0, 113, 188;
+  --secondary-clr: 152, 52, 102;
+  --secondary-accent-clr: 255, 224, 239;
+  --other-clr: 242, 115, 33;
+  --foreground-rgb: 1, 8, 25;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html.dark {
+  --primary-clr: 123, 220, 255;
+  --accent-clr: 44, 159, 237;
+  --foreground-rgb: 249, 249, 249;
+  --background-start-rgb: 1, 8, 26;
+  --background-end-rgb: 0, 3, 10;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgba(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgba(var(--background-start-rgb)),
+    rgba(var(--background-end-rgb))
+  );
+  font-family: "Raleway", sans-serif;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  /* to stretch content */
+  flex: 1;
+}
+
+footer {
+  background: rgba(var(--accent-clr), 20%);
+  /* color: rgba(var(--light-clr)); */
+}
+
+footer a,
+footer .accent {
+  color: rgba(var(--foreground-rgb), 70%);
+}
+
+footer a {
+  /* text-decoration: underline dashed white !important; */
 }

@@ -1,0 +1,34 @@
+[
+  {
+    "bandwidth": "5 GB",
+    "price": 780
+  },
+  {
+    "bandwidth": "10 GB",
+    "price": 1350
+  },
+  {
+    "bandwidth": "20 GB",
+    "price": 2350
+  },
+  {
+    "bandwidth": "30 GB",
+    "price": 3150
+  },
+  {
+    "bandwidth": "50 GB",
+    "price": 4650
+  },
+  {
+    "bandwidth": "75 GB",
+    "price": 5850
+  },
+  {
+    "bandwidth": "100 GB",
+    "price": 8000
+  },
+  {
+    "bandwidth": "200 GB",
+    "price": 14600
+  }
+]

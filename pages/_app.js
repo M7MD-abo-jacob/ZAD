@@ -1,5 +1,15 @@
-import '@/styles/globals.css'
+import { appWithTranslation } from "next-i18next";
+import RootLayout from "@/components/layouts/RootLayout";
+import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }) {
+  return (
+    <>
+      <RootLayout>
+        <Component {...pageProps} />
+      </RootLayout>
+    </>
+  );
 }
+
+export default appWithTranslation(App);

@@ -1,0 +1,38 @@
+[
+  {
+    "speed": "512 KB",
+    "bandwidth": "30 GB",
+    "speed_when_over": "256 KB",
+    "price": 6500
+  },
+  {
+    "speed": "1 MB",
+    "bandwidth": "50 GB",
+    "speed_when_over": "256 KB",
+    "price": 7500
+  },
+  {
+    "speed": "2 MB",
+    "bandwidth": "85 GB",
+    "speed_when_over": "256 KB",
+    "price": 10000
+  },
+  {
+    "speed": "4 MB",
+    "bandwidth": "140 GB",
+    "speed_when_over": "512 KB",
+    "price": 15680
+  },
+  {
+    "speed": "8 MB",
+    "bandwidth": "175 GB",
+    "speed_when_over": "1 MB",
+    "price": 26880
+  },
+  {
+    "speed": "16 MB",
+    "bandwidth": "225 GB",
+    "speed_when_over": "2 MB",
+    "price": 34720
+  }
+]
