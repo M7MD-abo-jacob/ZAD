@@ -1,5 +1,10 @@
 {
-  "governate": "governate:",
-  "area": "area:",
-  "directions": "select your desired governate then select the area"
+    "governate": "governate:",
+    "area": "area:",
+    "directions": "select your desired governate then select the area",
+    "area_agents": "available agents in your area",
+
+    "name": "name",
+    "address": "address",
+    "phones": "phone number"
 }

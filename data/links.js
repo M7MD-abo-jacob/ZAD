@@ -19,7 +19,7 @@ export const links = [
   },
   {
     title: "support",
-    href: "/support",
+    href: "http://support.zad.sy/",
     icon: RiCustomerService2Line,
   },
   {

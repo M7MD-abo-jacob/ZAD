@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { BsGooglePlay } from "react-icons/bs";
 import { links } from "@/data/links";
 
 const Footer = () => {
@@ -11,6 +12,18 @@ const Footer = () => {
         <div md={8} className="">
           <h3 className="uppercase text-2xl">{t("common:brand")}</h3>
           <p className="accent">{t("common:subtitle2")}</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.zad_it.zadisp&hl=en_US&pli=1"
+            className="w-max mx-auto md:ms-0 my-3 px-3 py-1.5 flex gap-2 items-center rounded-xl border-2 border-black dark:border-white"
+          >
+            <div className="w-10">
+              <BsGooglePlay className="h-full w-full text-green-800 dark:text-green-300" />
+            </div>
+            <div className="">
+              <div className="text-sm font-extrabold">Download our app</div>
+              <div className="text-2xl">Google Play</div>
+            </div>
+          </a>
         </div>
 
         <hr className="w-full md:hidden pb-0" />

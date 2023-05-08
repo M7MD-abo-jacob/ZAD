@@ -12,7 +12,6 @@ export default function Home() {
       <div className="relative w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div>
         <div className="absolute inset-0  opacity-50 z-10">
-          {/* TODO: image */}
           <Image
             src="/assets/fslide05.jpg"
             fill
@@ -21,8 +20,7 @@ export default function Home() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center md:text-left py-20 md:py-32">
-            {/* <div className="absolute inset-x-0 bottom-0 pb-10 bg-gray-900 opacity-75"></div> */}
+          <div className="text-center md:text-start py-20 md:py-32">
             <h1 className="text-4xl md:text-5xl text-white font-bold mb-4 leading-tight relative z-10">
               {t("home:header")}
             </h1>

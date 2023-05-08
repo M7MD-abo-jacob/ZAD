@@ -1,27 +1,37 @@
 import { useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import Table from "@/components/shared/Table";
 import SelectField from "@/components/shared/SelectField";
 
-export default function Agents({ agents }) {
-  const { t } = useTranslation(["common", "agents"]);
-  const [selectedGovernate, setSelectedGovernate] = useState("");
-  const [governates, setGovernates] = useState([]);
+export default function Agents({ agents, governates }) {
+  const router = useRouter();
+  const { query, push } = router;
+  const { gov, area } = query;
 
-  const [selectedArea, setSelectedArea] = useState("");
+  const { t } = useTranslation(["common", "agents"]);
+  const [selectedGovernate, setSelectedGovernate] = useState(gov);
+
   const [areas, setAreas] = useState([]);
 
   const handleGovernateChange = (value) => {
     setSelectedGovernate(value);
   };
   const handleAreaChange = (value) => {
-    setSelectedArea(value);
+    query.gov = selectedGovernate;
+    query.area = value;
+    push(router);
   };
 
   useEffect(() => {
-    setGovernates(["damascus", "latakia", "tartus", "homs", "aleppo"]);
-  }, []);
+    // fetch areas for the selected governate every time the user changes the governate
+    // const {data} = axios.get(`/areas`);
+    // setAreas(data);
+
+    // TODO: static data, change later
+    setAreas(["latakia", "jableh", "anything", "any"]);
+  }, [selectedGovernate]);
 
   return (
     <>
@@ -39,42 +49,18 @@ export default function Agents({ agents }) {
                 value={selectedGovernate}
                 onChange={(e) => handleGovernateChange(e.target.value)}
               />
-              {/* <label
-                for="countries"
-                className="block md:inline-block w-full md:w-1/2 md:text-center text-sm font-medium text-gray-900 dark:text-white"
-              >
-                {t("agents:governate")}
-              </label>
-              <select
-                id="governate"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:inline-block w-full md:w-1/2 mb-3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                {governates.map((gov) => (
-                  <option key={gov}>{gov}</option>
-                ))}
-              </select> */}
               {/* -------------------- AREA -------------------- */}
-              <SelectField
-                label={t("agents:area")}
-                options={areas}
-                value={selectedArea}
-                onChange={(e) => handleAreaChange(e.target.value)}
-              />
-              {/* <label
-                for="countries"
-                className="block md:inline-block w-full md:w-1/2 md:text-center text-sm font-medium text-gray-900 dark:text-white"
-              >
-                {t("agents:governate")}
-              </label>
-              <select
-                id="area"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:inline-block w-full md:w-1/2 mb-3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                {areas && areas.map((gov) => <option key={gov}>{gov}</option>)}
-              </select> */}
+              {areas.length > 0 && (
+                <SelectField
+                  label={t("agents:area")}
+                  options={areas}
+                  value={area}
+                  onChange={(e) => handleAreaChange(e.target.value)}
+                />
+              )}
             </form>
           </div>
-          {!selectedArea && (
+          {!area && (
             <p className="text-red-700 dark:text-red-500 text-center font-bold">
               {t("agents:directions")}
             </p>
@@ -87,7 +73,7 @@ export default function Agents({ agents }) {
         <h1 className="text-5xl">{t("common:agents")}</h1>
         {agents && agents.length > 0 && (
           <Table
-            caption={t("common:agents")}
+            caption={t("agents:area_agents")}
             data={agents}
             wrapperclassName="lg:min-w-full"
           />
@@ -97,16 +83,22 @@ export default function Agents({ agents }) {
   );
 }
 
-export async function getStaticProps({ locale, query }) {
+export async function getServerSideProps({ locale, query }) {
   console.log(query);
+  const gov = query?.gov || "";
+  const area = query?.area || "";
+
   // fetch data depending on query
-  const agents = require("@/data/agents.json");
-  console.log("agents:  ", agents);
-  // const gov = query.gov;
-  // const area = query.area;
+  // const {data: agents} = axios.get(`/agents?gov=${gov}&area=${area}`);
+
+  // TODO: static data, change later
+  const agents = gov && area ? require("@/data/agents.json") : [];
+  const governates = ["damascus", "latakia", "tartus", "homs", "aleppo"];
+
   return {
     props: {
       agents,
+      governates,
       ...(await serverSideTranslations(locale, ["common", "agents"])),
     },
   };

@@ -37,7 +37,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
               {Object.keys(element).map((el, i) => (
                 <td
                   key={i}
-                  data-cell={el}
+                  data-cell={t(el)}
                   role="cell"
                   className="px-6 py-4 align-middle"
                 >
@@ -47,7 +47,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
                   ) : typeof element[el] === "object" ? (
                     <ul>
                       {element[el].map((i) =>
-                        el === "phones" ? (
+                        el.split(":")[1] === "phones" ? (
                           <li key={i}>
                             <a href={`tel:${i}`} className="leading-7 p-2">
                               {i}

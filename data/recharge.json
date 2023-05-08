@@ -1,34 +1,33 @@
-[
-  {
-    "bandwidth": "5 GB",
-    "price": 780
-  },
-  {
-    "bandwidth": "10 GB",
-    "price": 1350
-  },
-  {
-    "bandwidth": "20 GB",
-    "price": 2350
-  },
-  {
-    "bandwidth": "30 GB",
-    "price": 3150
-  },
-  {
-    "bandwidth": "50 GB",
-    "price": 4650
-  },
-  {
-    "bandwidth": "75 GB",
-    "price": 5850
-  },
-  {
-    "bandwidth": "100 GB",
-    "price": 8000
-  },
-  {
-    "bandwidth": "200 GB",
-    "price": 14600
-  }
+[{
+        "adsl:bandwidth": "5 GB",
+        "adsl:price": 780
+    },
+    {
+        "adsl:bandwidth": "10 GB",
+        "adsl:price": 1350
+    },
+    {
+        "adsl:bandwidth": "20 GB",
+        "adsl:price": 2350
+    },
+    {
+        "adsl:bandwidth": "30 GB",
+        "adsl:price": 3150
+    },
+    {
+        "adsl:bandwidth": "50 GB",
+        "adsl:price": 4650
+    },
+    {
+        "adsl:bandwidth": "75 GB",
+        "adsl:price": 5850
+    },
+    {
+        "adsl:bandwidth": "100 GB",
+        "adsl:price": 8000
+    },
+    {
+        "adsl:bandwidth": "200 GB",
+        "adsl:price": 14600
+    }
 ]
