@@ -30,6 +30,7 @@ const MyDocument = ({ __NEXT_DATA__: { locale } }) => {
           rel="stylesheet"
         /> */}
         {/* <link rel="icon" href="/favicon.svg" /> */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="keywords"
           content="zad, zad isp, isp, syria, internet, adsl"

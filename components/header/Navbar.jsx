@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import Image from "next/image";
-import Button from "../buttons/Button";
+import Button from "../shared/Button";
 import { links } from "@/data/links";
 import logoImg from "@/public/assets/zad-logo.png";
 

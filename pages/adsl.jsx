@@ -2,7 +2,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { MdStarBorderPurple500 } from "react-icons/md";
 import Table from "@/components/layouts/Table";
-import Button from "@/components/buttons/Button";
+import Button from "@/components/shared/Button";
 import { adslSpecs } from "@/data/adslSpecs";
 import limitedSubs from "@/data/limitedSubs";
 import recharge from "@/data/recharge";

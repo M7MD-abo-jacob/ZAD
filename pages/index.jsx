@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Button from "@/components/buttons/Button";
+import Button from "@/components/shared/Button";
 import Link from "next/link";
 import Image from "next/image";
 

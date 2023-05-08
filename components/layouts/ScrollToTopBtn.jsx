@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { BsCaretUp } from "react-icons/bs";
-import Button from "../buttons/Button";
+import Button from "../shared/Button";
 
 const ScrollToTopBtn = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
