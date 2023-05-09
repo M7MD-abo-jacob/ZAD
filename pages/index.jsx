@@ -27,7 +27,7 @@ export default function Home() {
             <p className="text-lg md:text-2xl text-gray-100 mb-8 relative z-10">
               {t("common:subtitle")}
             </p>
-            <Link href="/adsl">
+            <Link href="/adsl" className="inline-block">
               <Button className="text-2xl font-bold py-3 px-6 relative z-10">
                 {t("home:check_services")}
               </Button>
