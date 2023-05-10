@@ -1,0 +1,12 @@
+{
+  "support_header": "ZAD isp customer service",
+  "new_header": "create a new ticket",
+  "new_descriptions": "Please provide as much detail as possible so we can best assist you",
+
+  "status_header": "check a ticket status",
+  "status_descriptions": "We provide the archives and histories of all your support requests, along with the full responses to them",
+  "status_paragraph": "To view the status of the card, please enter your e-mail registered with us with the card, and the card number sent to you.\n  If this is your first contact with us, or you have lost your card number, please click here to create a new card.",
+  "email": "email address:",
+  "number": "card number:",
+  "check_status": "check status"
+}

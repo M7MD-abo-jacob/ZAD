@@ -1,10 +1,10 @@
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import React from "react";
 
-export default function SupportPage() {
+export default function NewTicketPage() {
   const { t } = useTranslation(["common", "support"]);
-  return <div>{t("common:subtitle")}</div>;
+
+  return <div>NewTicketPage</div>;
 }
 
 export async function getStaticProps({ locale }) {

@@ -35,7 +35,7 @@ export default function Agents({ agents, governates }) {
 
   return (
     <>
-      <section id="search-form" className="container px-2">
+      <section id="search-form" className="container px-3 mx-auto">
         <div className="container flex flex-col">
           <h1 className="capitalize text-5xl w-full">{t("common:agents")}</h1>
           <br />
@@ -68,9 +68,9 @@ export default function Agents({ agents, governates }) {
         </div>
       </section>
       {/* -------------------- TABLE SECTION -------------------- */}
-      <section id="agents" className="container w-full mx-auto px-3 mt-5">
+      <section id="agents" className="container w-full px-3 mx-auto mt-5">
         {/* TODO: diferent h1 */}
-        <h1 className="text-5xl">{t("common:agents")}</h1>
+        <h1 className="text-5xl">{t("agents:area_agents")}</h1>
         {agents && agents.length > 0 && (
           <Table
             caption={t("agents:area_agents")}
