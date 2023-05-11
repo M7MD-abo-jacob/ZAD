@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import React, { useState } from "react";
+import { MdPlaylistAdd, MdPlaylistAddCheck } from "react-icons/md";
 
 export default function SupportPage() {
   const { t } = useTranslation(["common", "support"]);
@@ -14,17 +15,14 @@ export default function SupportPage() {
         <h1 className="text-5xl mb-2">{t("common:support")}</h1>
         <h2 className="text-2xl mb-1">{t("support:support_header")}</h2>
         <p>{t("common:subtitle")}</p>
+        <hr className="my-4" />
       </section>
-      <hr />
 
       <div className="flex flex-col md:flex-row justify-between container mx-auto px-4">
         <section id="card-status" className="w-full mt-4 px-4">
           <h2 className="text-2xl mb-2">
-            <img
-              src="assets/new_ticket_icon.jpg"
-              alt="new ticket icon"
-              className="inline me-2"
-            />
+            {/* TODO: css icon colors */}
+            <MdPlaylistAddCheck className="inline-block text-5xl me-2" />
             <span>{t("support:status_header")}</span>
           </h2>
           <p className="mb-2">{t("support:status_descriptions")}</p>
@@ -35,11 +33,7 @@ export default function SupportPage() {
 
         <section id="new-card" className="w-full mt-4 px-4">
           <h2 className="text-2xl mb-2">
-            <img
-              src="assets/ticket_status_icon.jpg"
-              alt="ticket status icon"
-              className="inline me-2"
-            />
+            <MdPlaylistAdd className="inline-block text-5xl me-2" />
             <span>{t("support:new_header")}</span>
           </h2>
           <p className="mb-1">{t("support:new_descriptions")}</p>

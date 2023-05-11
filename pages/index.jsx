@@ -12,16 +12,16 @@ export default function Home() {
     <>
       <div className="relative w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div>
-        <div className="absolute inset-0  opacity-50 z-10">
+        <div className="absolute inset-0 opacity-50 z-10">
           <Image
             src="/assets/fslide05.jpg"
             fill
             alt="hero section"
-            className="absolute inset-0 object-cover w-full h-full"
+            className="absolute inset-0 object-cover w-full"
           />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center md:text-start py-20 md:py-32">
+        <div className="container relative mx-auto px-4 sm:px-6">
+          <div className="text-center md:text-start py-10 md:py-12">
             <h1 className="text-4xl md:text-5xl text-white font-bold mb-4 leading-tight relative z-10">
               {t("home:header")}
             </h1>
@@ -38,7 +38,9 @@ export default function Home() {
       </div>
       <br />
       <br />
-      <section></section>
+      <section>
+        <Link href="http://selfcare.zad.sy/adsl/register/step1"></Link>
+      </section>
     </>
   );
 }

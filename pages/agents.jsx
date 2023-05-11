@@ -4,6 +4,8 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Table from "@/components/shared/Table";
 import SelectField from "@/components/shared/SelectField";
+import agentsServices from "@/data/agentsServices";
+import { BsDot } from "react-icons/bs";
 
 export default function Agents({ agents, governates }) {
   const router = useRouter();
@@ -70,13 +72,32 @@ export default function Agents({ agents, governates }) {
       {/* -------------------- TABLE SECTION -------------------- */}
       <section id="agents" className="container w-full px-3 mx-auto mt-5">
         {/* TODO: diferent h1 */}
-        <h1 className="text-5xl">{t("agents:area_agents")}</h1>
-        {agents && agents.length > 0 && (
-          <Table
-            caption={t("agents:area_agents")}
-            data={agents}
-            wrapperclassName="lg:min-w-full"
-          />
+        {agents?.length > 0 ? (
+          <>
+            <h1 className="text-5xl mb-3">{t("agents:area_agents")}</h1>
+            <Table
+              caption={t("agents:area_agents")}
+              data={agents}
+              wrapperclassName="lg:min-w-full"
+            />
+          </>
+        ) : (
+          <div>
+            <h2 className="text-3xl mb-2 capitalize">
+              {t("agents:services_header")}
+            </h2>
+            <ol>
+              {agentsServices.map((service) => (
+                <li key={service}>
+                  <h3 className="text-xl mb-2 uppercase">
+                    <BsDot className="inline-block me-2" />
+                    <span>{t(`agents:${service}_header`)}</span>
+                  </h3>
+                  <p className="mb-3">{t(`agents:${service}_details`)}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         )}
       </section>
     </>
