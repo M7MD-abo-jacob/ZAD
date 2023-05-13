@@ -38,16 +38,31 @@ export default function Navbar() {
           </Link>
           <div className="flex items-center">
             {/* -------------------- THEME BTN -------------------- */}
-            <Button
+            {/* <Button
               onClick={() => {
                 setDarkChecked((prev) => !prev);
                 const newTheme = window.__theme === "dark" ? "light" : "dark";
                 window.__setPreferredTheme(newTheme);
               }}
+              >
+              {darkChecked ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+            </Button> */}
+
+            <button
+              onClick={() => {
+                setDarkChecked((prev) => !prev);
+                const newTheme = window.__theme === "dark" ? "light" : "dark";
+                window.__setPreferredTheme(newTheme);
+              }}
+              // onClick={() => setExpanded((prev) => !prev)}
+              // data-collapse-toggle="navbar-default"
+              type="button"
+              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
               {darkChecked ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
-            </Button>
-
+              {/* <span className="sr-only">Open account menu</span>
+              <RxPerson /> */}
+            </button>
             {/* -------------------- ACCOUNT BTN -------------------- */}
             <button
               onClick={() => setExpanded((prev) => !prev)}
@@ -95,7 +110,7 @@ export default function Navbar() {
         >
           {/* -------------------- personal info if logged in -------------------- */}
           {/* TODO: add lgin logic and change static data to user */}
-          {false ? (
+          {true ? (
             <>
               <div className="flex items-center justify-center">
                 <img
