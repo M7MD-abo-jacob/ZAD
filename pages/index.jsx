@@ -4,6 +4,9 @@ import Button from "@/components/shared/Button";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { Canvas } from "@react-three/fiber";
+import Earth from "@/components/layouts/Earth";
+import { Suspense } from "react";
 
 export default function Home() {
   const { t } = useTranslation(["common", "home"]);
@@ -13,12 +16,17 @@ export default function Home() {
       <div className="relative w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div>
         <div className="absolute inset-0 opacity-50 z-10">
-          <Image
+          {/* <Image
             src="/assets/fslide05.jpg"
             fill
             alt="hero section"
             className="absolute inset-0 object-cover w-full"
-          />
+          /> */}
+          <Canvas>
+            <Suspense fallback="loading">
+              <Earth />
+            </Suspense>
+          </Canvas>
         </div>
         <div className="container relative mx-auto px-4 sm:px-6">
           <div className="text-center md:text-start py-10 md:py-12">
