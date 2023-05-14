@@ -13,7 +13,7 @@ import { BsGeoAlt } from "react-icons/bs";
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const { pathname } = useRouter();
+  const { pathname, query, asPath, locale, replace } = useRouter();
   const [expanded, setExpanded] = useState(false);
   const [darkChecked, setDarkChecked] = useState(false);
 
@@ -48,6 +48,19 @@ export default function Navbar() {
               {darkChecked ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
             </Button> */}
 
+            {/* -------------------- LANGUAGE BTN -------------------- */}
+            <button
+              type="button"
+              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              onClick={() => {
+                replace({ pathname, query }, asPath, {
+                  locale: locale === "ar" ? "en" : "ar",
+                });
+                document.documentElement.dir = locale === "ar" ? "ltr" : "rtl";
+              }}
+            >
+              {locale === "ar" ? "en" : "ar"}
+            </button>
             <button
               onClick={() => {
                 setDarkChecked((prev) => !prev);
@@ -66,7 +79,6 @@ export default function Navbar() {
             {/* -------------------- ACCOUNT BTN -------------------- */}
             <button
               onClick={() => setExpanded((prev) => !prev)}
-              data-collapse-toggle="navbar-default"
               type="button"
               className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
@@ -100,6 +112,7 @@ export default function Navbar() {
           setExpanded(false);
         }}
       >
+        {/* -------------------- personal info if logged in -------------------- */}
         <div
           id="personal-account"
           className="container mx-auto block lg:hidden w-full rounded-lg px-4 py-3 bg-gray-50 dark:bg-gray-950 text-center"
@@ -108,23 +121,51 @@ export default function Navbar() {
             // e.preventDefault();
           }}
         >
-          {/* -------------------- personal info if logged in -------------------- */}
           {/* TODO: add lgin logic and change static data to user */}
           {true ? (
             <>
-              <div className="flex items-center justify-center">
-                <img
-                  style={{ width: "35%" }}
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                  alt="me"
-                />
-                <div>
+              <div className="flex  justify-center max-h-40 w-fit">
+                <div className="flex justify-center w-1/2">
+                  <img
+                    className="w-full md:w-1/2 object-contain aspect-square"
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                    alt="me"
+                  />
+                </div>
+                <div className="flex flex-col justify-around my-2">
                   <h2 className="fs-3 fw-bold">username</h2>
                   <h3 className="fs-6">@ username</h3>
                   <div className="fs-6">
                     <BsGeoAlt className="inline-block me-1" />
                     Damascus
                   </div>
+                </div>
+                {/* -------------------- LANGUAGE BUTTON -------------------- */}
+                <div className="flex flex-col justify-around">
+                  <Button
+                    className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                    disabled={locale === "en" ? true : false}
+                    onClick={() => {
+                      replace({ pathname, query }, asPath, {
+                        locale: "en",
+                      });
+                      document.documentElement.dir = "ltr";
+                    }}
+                  >
+                    en
+                  </Button>
+                  <Button
+                    className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                    disabled={locale === "ar" ? true : false}
+                    onClick={() => {
+                      replace({ pathname, query }, asPath, {
+                        locale: "ar",
+                      });
+                      document.documentElement.dir = "rtl";
+                    }}
+                  >
+                    ar
+                  </Button>
                 </div>
               </div>
               <hr className="mb-3" />

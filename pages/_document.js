@@ -1,9 +1,8 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { dir } from "i18next";
 
 const MyDocument = ({ __NEXT_DATA__: { locale } }) => {
   return (
-    <Html dir={dir(locale)} lang={locale}>
+    <Html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <Head>
         <link
           rel="shortcut icon"

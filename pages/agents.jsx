@@ -40,6 +40,23 @@ export default function Agents({ agents, governates }) {
       <section id="search-form" className="container px-3 mx-auto">
         <div className="container flex flex-col">
           <h1 className="capitalize text-5xl w-full">{t("common:agents")}</h1>
+
+          <div>
+            <h2 className="text-3xl mb-2 capitalize">
+              {t("agents:services_header")}
+            </h2>
+            <ol>
+              {agentsServices.map((service) => (
+                <li key={service}>
+                  <h3 className="text-xl mb-2 uppercase">
+                    <BsDot className="inline-block me-2" />
+                    <span>{t(`agents:${service}_header`)}</span>
+                  </h3>
+                  <p className="mb-3">{t(`agents:${service}_details`)}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
           <br />
 
           <div className="w-full">
@@ -72,7 +89,7 @@ export default function Agents({ agents, governates }) {
       {/* -------------------- TABLE SECTION -------------------- */}
       <section id="agents" className="container w-full px-3 mx-auto mt-5">
         {/* TODO: diferent h1 */}
-        {agents?.length > 0 ? (
+        {agents?.length > 0 && (
           <>
             <h1 className="text-5xl mb-3">{t("agents:area_agents")}</h1>
             <Table
@@ -81,23 +98,6 @@ export default function Agents({ agents, governates }) {
               wrapperclassName="lg:min-w-full"
             />
           </>
-        ) : (
-          <div>
-            <h2 className="text-3xl mb-2 capitalize">
-              {t("agents:services_header")}
-            </h2>
-            <ol>
-              {agentsServices.map((service) => (
-                <li key={service}>
-                  <h3 className="text-xl mb-2 uppercase">
-                    <BsDot className="inline-block me-2" />
-                    <span>{t(`agents:${service}_header`)}</span>
-                  </h3>
-                  <p className="mb-3">{t(`agents:${service}_details`)}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
         )}
       </section>
     </>
