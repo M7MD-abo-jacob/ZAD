@@ -24,7 +24,7 @@ export default function Home() {
           /> */}
           <Canvas>
             <Suspense fallback="loading">
-              {/* <Earth /> */}
+              <Earth />
             </Suspense>
           </Canvas>
         </div>

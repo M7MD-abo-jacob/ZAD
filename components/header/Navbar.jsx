@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* -------------------- LANGUAGE BTN -------------------- */}
             <button
               type="button"
-              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 "
               onClick={() => {
                 replace({ pathname, query }, asPath, {
                   locale: locale === "ar" ? "en" : "ar",
