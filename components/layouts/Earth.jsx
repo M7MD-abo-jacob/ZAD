@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import * as THREE from "three";
+import { DoubleSide } from "three";
 import { TextureLoader } from "three";
 
 export default function Earth(props) {
@@ -23,7 +23,14 @@ export default function Earth(props) {
     const elapsedTime = clock.getElapsedTime();
 
     earthRef.current.rotation.y = elapsedTime / 6;
-    cloudsRef.current.rotation.y = elapsedTime / 9;
+    cloudsRef.current.rotation.y = elapsedTime / 6;
+    if (window.__theme === "dark") {
+      earthRef.current.material.map = nightMap;
+    }
+    if (window.__theme !== "dark") {
+      earthRef.current.material.map = colorMap;
+    }
+    // cloudsRef.current.rotation.x = elapsedTime / 1;
   });
 
   return (
@@ -42,13 +49,13 @@ export default function Earth(props) {
       />
       {/* -------------------- CLOUDS -------------------- */}
       <mesh ref={cloudsRef} position={[1, 0, 3]}>
-        <sphereGeometry args={[1.005, 32, 32]} />
+        <sphereGeometry args={[1.01, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
           opacity={0.4}
           depthWrite={true}
           transparent={true}
-          side={THREE.DoubleSide}
+          side={DoubleSide}
         />
       </mesh>
       {/* -------------------- EARTH -------------------- */}

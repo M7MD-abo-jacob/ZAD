@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="relative w-full">
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div>
         <div className="absolute inset-0 opacity-50 z-10">
           {/* <Image
             src="/assets/fslide05.jpg"
