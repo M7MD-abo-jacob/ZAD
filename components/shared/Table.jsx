@@ -13,13 +13,11 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
 
   return (
     <div
-      className={`relementative overflow-x-auto mx-auto  ${styles.wrapper} ${wrapperClass}`}
-      // shadow-lg sm:rounded-lg
+      className={`wrapper relementative overflow-x-auto mx-auto  ${styles.wrapper} ${wrapperClass}`}
     >
       <table
         role="table"
         className={`text-sm text-center w-full ${styles.table} ${tableClass}`}
-        // text-gray-500 dark:text-gray-400
       >
         {caption && <caption role="caption">{caption}</caption>}
         <thead role="rowgroup" className="text-xs uppercase border-b-2">
@@ -42,7 +40,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
                   className="px-6 py-4 align-middle"
                 >
                   {/* display prices properly */}
-                  {el === "price" ? (
+                  {el.split(":")[1] === "price" ? (
                     priceFormatter.format(element[el]).replace(/\$/g, "")
                   ) : typeof element[el] === "object" ? (
                     <ul>

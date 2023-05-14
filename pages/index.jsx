@@ -1,12 +1,12 @@
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Button from "@/components/shared/Button";
+import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import { Canvas } from "@react-three/fiber";
 import Earth from "@/components/layouts/Earth";
-import { Suspense } from "react";
+import Button from "@/components/shared/Button";
 
 export default function Home() {
   const { t } = useTranslation(["common", "home"]);
@@ -23,9 +23,7 @@ export default function Home() {
             className="absolute inset-0 object-cover w-full"
           /> */}
           <Canvas>
-            <Suspense fallback="loading">
-              <Earth />
-            </Suspense>
+            <Suspense fallback="loading">{/* <Earth /> */}</Suspense>
           </Canvas>
         </div>
         <div className="container relative mx-auto px-4 sm:px-6">

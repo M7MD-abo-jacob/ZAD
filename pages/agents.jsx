@@ -4,8 +4,7 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Table from "@/components/shared/Table";
 import SelectField from "@/components/shared/SelectField";
-import agentsServices from "@/data/agentsServices";
-import { BsDot } from "react-icons/bs";
+import AgentsService from "@/components/agents/AgentsService";
 
 export default function Agents({ agents, governates }) {
   const router = useRouter();
@@ -39,27 +38,38 @@ export default function Agents({ agents, governates }) {
     <>
       <section id="search-form" className="container px-3 mx-auto">
         <div className="container flex flex-col">
-          <h1 className="capitalize text-5xl w-full">{t("common:agents")}</h1>
+          <h1 className="capitalize text-5xl w-full mb-4">
+            {t("common:agents")}
+          </h1>
 
           <div>
             <h2 className="text-3xl mb-2 capitalize">
               {t("agents:services_header")}
             </h2>
-            <ol>
-              {agentsServices.map((service) => (
-                <li key={service}>
-                  <h3 className="text-xl mb-2 uppercase">
-                    <BsDot className="inline-block me-2" />
-                    <span>{t(`agents:${service}_header`)}</span>
-                  </h3>
-                  <p className="mb-3">{t(`agents:${service}_details`)}</p>
-                </li>
-              ))}
+            <ol className="list-decimal ps-5">
+              <AgentsService service={"recharge"}>
+                <p>{t("agents:recharge_details")}</p>
+              </AgentsService>
+              <AgentsService service={"change_speed"}>
+                <p>{t("agents:change_speed_details")}</p>
+                <ul className="list-disc ps-5">
+                  <li>{t("agents:change_speed_1")}</li>
+                  <li>{t("agents:change_speed_2")}</li>
+                  <li>{t("agents:change_speed_3")}</li>
+                  <li>{t("agents:change_speed_4")}</li>
+                </ul>
+              </AgentsService>
+              <AgentsService service={"stop_service"}>
+                <p>{t("agents:stop_service_details")}</p>
+              </AgentsService>
             </ol>
           </div>
           <br />
 
           <div className="w-full">
+            <h1 className="capitalize text-5xl w-full mb-4">
+              {t("agents:search")}
+            </h1>
             <form className="w-full">
               {/* -------------------- GOVERNATE -------------------- */}
               <SelectField
@@ -95,7 +105,7 @@ export default function Agents({ agents, governates }) {
             <Table
               caption={t("agents:area_agents")}
               data={agents}
-              wrapperclassName="lg:min-w-full"
+              wrapperClass="big-table lg:min-w-3/4"
             />
           </>
         )}
