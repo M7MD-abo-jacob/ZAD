@@ -23,7 +23,9 @@ export default function Home() {
             className="absolute inset-0 object-cover w-full"
           /> */}
           <Canvas>
-            <Suspense fallback="loading">{/* <Earth /> */}</Suspense>
+            <Suspense fallback="loading">
+              <Earth />
+            </Suspense>
           </Canvas>
         </div>
         <div className="container relative mx-auto px-4 sm:px-6">
