@@ -22,7 +22,7 @@ export default function Adsl() {
           {adslSpecs.map((spec, index) => {
             return (
               <li key={index}>
-                <MdStarBorderPurple500 className="inline text-blue-800 me-2 text-xl mb-1" />
+                <MdStarBorderPurple500 className="inline text-primary me-2 text-xl mb-1" />
                 <span>{t(`adsl:${spec}`)}</span>
               </li>
             );

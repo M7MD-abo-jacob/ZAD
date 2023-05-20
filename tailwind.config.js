@@ -8,6 +8,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "hsl(var(--primary-clr))",
+        "primary-transparent": "hsl(var(--primary-clr), 0.2)",
+        "primary-semitransparent": "hsl(var(--primary-clr), 0.5)",
+        accent: "hsl(var(--accent-clr))",
+        "accent-transparent": "hsl(var(--accent-clr), 0.2)",
+        "accent-semitransparent": "hsl(var(--accent-clr), 0.5)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

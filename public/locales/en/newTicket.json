@@ -1,0 +1,19 @@
+{
+  "enter_details": "please enter your new ticket details",
+  "enter_correctly": "make sure to enter all details correctly to continue",
+  "name": "full name:",
+  "email": "email:",
+  "user_name": "your zad username:",
+  "phone": "telephone number with the subscription:",
+  "phone_ext": "governate:",
+  "mobile_no": "mobile number:",
+  "deptId": "department:",
+  "choose_dept": "please choose a department",
+  "subject": "subject:",
+  "message": "message:",
+  "pri": "card status:",
+  "captcha": "captcha text:",
+  "captcha_placeholder": "enter the text you see in the image",
+  "send": "send ticket",
+  "reset": "reset"
+}

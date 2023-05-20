@@ -47,7 +47,11 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
                       {element[el].map((i) =>
                         el.split(":")[1] === "phones" ? (
                           <li key={i}>
-                            <a href={`tel:${i}`} className="leading-7 p-2">
+                            <a
+                              target="_blank"
+                              href={`tel:${i}`}
+                              className="leading-7 p-2 underline underline-offset-4"
+                            >
                               {i}
                             </a>
                           </li>

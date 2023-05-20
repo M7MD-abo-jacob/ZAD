@@ -17,14 +17,18 @@ export default function ContactPage() {
         {contactMethods.map((method) => (
           <li
             key={method.title}
-            className="flex rounded-lg mb-6 flex-col md:flex-row items-stretch bg-blue-500 bg-opacity-25"
+            className="flex rounded-lg mb-6 flex-col md:flex-row items-stretch bg-accent-semitransparent"
           >
             <h3 className="text-3xl flex flex-1 text-center p-3 justify-center items-center">
               {t(`contact:${method.title}`)}
             </h3>
             <div className="flex flex-col items-center justify-center flex-1 w-full rounded-b-lg md:rounded-none md:rounded-e-lg text-center md:text-start bg-neutral-500 bg-opacity-25">
               {method.links.map((link) => (
-                <Link href={link.href} key={link.title} className="p-1">
+                <Link
+                  href={link.href}
+                  key={link.title}
+                  className="p-1 underline underline-offset-4"
+                >
                   {link.title}
                 </Link>
               ))}

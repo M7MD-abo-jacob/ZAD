@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-around ">
+      <div className="flex flex-col md:flex-row justify-around">
         <div md={8} className="">
           <h3 className="uppercase text-2xl">{t("common:brand")}</h3>
           <p className="accent">{t("common:subtitle2")}</p>

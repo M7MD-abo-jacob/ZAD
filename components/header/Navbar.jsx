@@ -37,17 +37,6 @@ export default function Navbar() {
             />
           </Link>
           <div className="flex items-center">
-            {/* -------------------- THEME BTN -------------------- */}
-            {/* <Button
-              onClick={() => {
-                setDarkChecked((prev) => !prev);
-                const newTheme = window.__theme === "dark" ? "light" : "dark";
-                window.__setPreferredTheme(newTheme);
-              }}
-              >
-              {darkChecked ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
-            </Button> */}
-
             {/* -------------------- LANGUAGE BTN -------------------- */}
             <button
               type="button"
@@ -61,20 +50,17 @@ export default function Navbar() {
             >
               {locale === "ar" ? "en" : "ar"}
             </button>
+            {/* -------------------- THEME BTN -------------------- */}
             <button
               onClick={() => {
                 setDarkChecked((prev) => !prev);
                 const newTheme = window.__theme === "dark" ? "light" : "dark";
                 window.__setPreferredTheme(newTheme);
               }}
-              // onClick={() => setExpanded((prev) => !prev)}
-              // data-collapse-toggle="navbar-default"
               type="button"
               className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
               {darkChecked ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
-              {/* <span className="sr-only">Open account menu</span>
-              <RxPerson /> */}
             </button>
             {/* -------------------- ACCOUNT BTN -------------------- */}
             <button
@@ -82,7 +68,6 @@ export default function Navbar() {
               type="button"
               className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              <span className="sr-only">Open account menu</span>
               <RxPerson />
             </button>
 
@@ -93,7 +78,6 @@ export default function Navbar() {
               type="button"
               className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              <span className="sr-only">Open main menu</span>
               {expanded ? <CgClose /> : <CgMenu />}
             </button>
           </div>
@@ -132,7 +116,7 @@ export default function Navbar() {
                     alt="me"
                   />
                 </div>
-                <div className="flex flex-col justify-around my-2">
+                <div className="flex flex-col justify-around m-2">
                   <h2 className="fs-3 fw-bold">username</h2>
                   <h3 className="fs-6">@ username</h3>
                   <div className="fs-6">
@@ -141,9 +125,9 @@ export default function Navbar() {
                   </div>
                 </div>
                 {/* -------------------- LANGUAGE BUTTON -------------------- */}
-                <div className="flex flex-col justify-around">
+                <div className="flex flex-col justify-around m-2">
                   <Button
-                    className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                    className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-gray-400"
                     disabled={locale === "en" ? true : false}
                     onClick={() => {
                       replace({ pathname, query }, asPath, {
@@ -207,8 +191,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:py-2 lg:px-0 ${
                     link.href === pathname
-                      ? " text-white bg-blue-700 lg:bg-transparent lg:text-blue-700 dark:text-white lg:dark:text-blue-500 font-bold"
-                      : "text-gray-900 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700  dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
+                      ? " text-white bg-primary lg:bg-transparent lg:text-primary dark:text-white lg:dark:text-primary font-bold"
+                      : "text-gray-900 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-accent dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
                   }`}
                 >
                   <Icon className="block lg:hidden" />

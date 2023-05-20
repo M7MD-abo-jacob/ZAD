@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
         <Navbar />
       </header>
       <main className="mt-24 lg:mt-32">{children}</main>
-      <footer className="text-center md:text-start mt-9 pt-10 pb-20 bg-gradient">
+      <footer className="text-center md:text-start mt-9 pt-10 pb-20 bg-gradient-to-b from-accent-transparent to-primary-transparent">
         <Footer />
       </footer>
       <ScrollToTopBtn />
