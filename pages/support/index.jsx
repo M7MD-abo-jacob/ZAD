@@ -2,6 +2,7 @@ import Button from "@/components/shared/Button";
 import TicketForm from "@/components/shared/TicketForm";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 import Link from "next/link";
 import React, { useState } from "react";
 import { MdPlaylistAdd, MdPlaylistAddCheck } from "react-icons/md";
@@ -9,8 +10,17 @@ import { MdPlaylistAdd, MdPlaylistAddCheck } from "react-icons/md";
 export default function SupportPage() {
   const { t } = useTranslation(["common", "support"]);
 
+  const headData = {
+    title: `${t("common:brand")} | ${t("common:support")}`,
+    description: `${t("support:support_header")}`,
+  };
+
   return (
     <>
+      <Head>
+        <title>{headData.title}</title>
+        <meta name="description" content={headData.description} />
+      </Head>
       <section id="support-hero" className="container mx-auto px-4">
         <h1 className="text-5xl mb-2">{t("common:support")}</h1>
         <h2 className="text-2xl mb-1">{t("support:support_header")}</h2>

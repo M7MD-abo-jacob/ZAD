@@ -2,41 +2,53 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import contactMethods from "@/data/contactMethods";
+import Head from "next/head";
 
 export default function ContactPage() {
   const { t } = useTranslation(["common", "contact"]);
 
-  return (
-    <section id="contact-us" className="container mx-auto px-3">
-      <h1 className="text-5xl">{t("common:contact")}</h1>
-      <p>{t("contact:contact_p")}</p>
-      <br />
+  const headData = {
+    title: `${t("common:brand")} | ${t("common:contact")}`,
+    description: `${t("contact:contact_us")}`,
+  };
 
-      <h2 className="text-2xl mb-3">{t("contact:contact_us")}</h2>
-      <ul>
-        {contactMethods.map((method) => (
-          <li
-            key={method.title}
-            className="flex rounded-lg mb-6 flex-col md:flex-row items-stretch bg-accent-semitransparent"
-          >
-            <h3 className="text-3xl flex flex-1 text-center p-3 justify-center items-center">
-              {t(`contact:${method.title}`)}
-            </h3>
-            <div className="flex flex-col items-center justify-center flex-1 w-full rounded-b-lg md:rounded-none md:rounded-e-lg text-center md:text-start bg-neutral-500 bg-opacity-25">
-              {method.links.map((link) => (
-                <Link
-                  href={link.href}
-                  key={link.title}
-                  className="p-1 underline underline-offset-4"
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </section>
+  return (
+    <>
+      <Head>
+        <title>{headData.title}</title>
+        <meta name="description" content={headData.description} />
+      </Head>
+      <section id="contact-us" className="container mx-auto px-3">
+        <h1 className="text-5xl">{t("common:contact")}</h1>
+        <p>{t("contact:contact_p")}</p>
+        <br />
+
+        <h2 className="text-2xl mb-3">{t("contact:contact_us")}</h2>
+        <ul>
+          {contactMethods.map((method) => (
+            <li
+              key={method.title}
+              className="flex rounded-lg mb-6 flex-col md:flex-row items-stretch bg-accent-semitransparent"
+            >
+              <h3 className="text-3xl flex flex-1 text-center p-3 justify-center items-center">
+                {t(`contact:${method.title}`)}
+              </h3>
+              <div className="flex flex-col items-center justify-center flex-1 w-full rounded-b-lg md:rounded-none md:rounded-e-lg text-center md:text-start bg-neutral-500 bg-opacity-25">
+                {method.links.map((link) => (
+                  <Link
+                    href={link.href}
+                    key={link.title}
+                    className="p-1 underline underline-offset-4"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }
 

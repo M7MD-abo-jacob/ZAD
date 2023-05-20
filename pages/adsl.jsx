@@ -8,12 +8,22 @@ import adslSpecs from "@/data/adslSpecs";
 import limitedSubs from "@/data/limitedSubs";
 import recharge from "@/data/recharge";
 import routerSettings from "@/data/routerSettings";
+import Head from "next/head";
 
 export default function Adsl() {
   const { t } = useTranslation(["common", "adsl"]);
 
+  const headData = {
+    title: `${t("common:brand")} | ${t("common:adsl")}`,
+    description: `${t("adsl:adsl")}`,
+  };
+
   return (
     <>
+      <Head>
+        <title>{headData.title}</title>
+        <meta name="description" content={headData.description} />
+      </Head>
       <section id="details" className="container mx-auto px-3 md:px-5">
         <h1 className="text-5xl mb-4 uppercase">{t("common:adsl")}</h1>
         {/* TODO: break lines */}

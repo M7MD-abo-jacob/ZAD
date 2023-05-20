@@ -1,19 +1,20 @@
 {
-    "main_p": "It is one of the ways to connect to the World Wide Web (Internet), which provides high access speeds through the telephone line. \nIn other words it is a subscription to asymmetric digital lines technology, which is a feature added to the fixed (landline) telephone line by providing it with its own ADSL gateway in its exchange, which enables the customer to obtain the following features:",
-    "quick_connection": "Instant and permanent connection to the Internet 24/24 without the need for a special contact number.",
-    "stable_phone": "Not occupying the fixed telephone line, and thus not affecting its features such as receiving and sending calls - faxes - etc.",
-    "variability": "Different connection speeds as desired by the customer. Fixed cost per month.",
-    "static_ip": "Possibility to allocate a static IP address for communication.",
-    "details": "service details",
+  "adsl": "learn more about adsl service from ZAD isp",
+  "main_p": "It is one of the ways to connect to the World Wide Web (Internet), which provides high access speeds through the telephone line. \nIn other words it is a subscription to asymmetric digital lines technology, which is a feature added to the fixed (landline) telephone line by providing it with its own ADSL gateway in its exchange, which enables the customer to obtain the following features:",
+  "quick_connection": "Instant and permanent connection to the Internet 24/24 without the need for a special contact number.",
+  "stable_phone": "Not occupying the fixed telephone line, and thus not affecting its features such as receiving and sending calls - faxes - etc.",
+  "variability": "Different connection speeds as desired by the customer. Fixed cost per month.",
+  "static_ip": "Possibility to allocate a static IP address for communication.",
+  "details": "service details",
 
-    "limited": "download-limited subscriptions:",
-    "recharge": "recharge balance:",
-    "router_settings": "router settings:",
-    "setting": "setting",
-    "value": "value",
+  "limited": "download-limited subscriptions:",
+  "recharge": "recharge balance:",
+  "router_settings": "router settings:",
+  "setting": "setting",
+  "value": "value",
 
-    "speed": "speed",
-    "bandwidth": "bandwidth",
-    "speed_when_over": "speed after exceeding bandwidth limit",
-    "price": "price (S.P.)"
+  "speed": "speed",
+  "bandwidth": "bandwidth",
+  "speed_when_over": "speed after exceeding bandwidth limit",
+  "price": "price (S.P.)"
 }

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Table from "@/components/shared/Table";
 import SelectField from "@/components/shared/SelectField";
 import AgentsService from "@/components/agents/AgentsService";
+import Head from "next/head";
 
 export default function Agents({ agents, governates }) {
   const router = useRouter();
@@ -34,8 +35,17 @@ export default function Agents({ agents, governates }) {
     setAreas(["latakia", "jableh", "anything", "any"]);
   }, [selectedGovernate]);
 
+  const headData = {
+    title: `${t("common:brand")} | ${t("common:agents")}`,
+    description: `${t("agents:search")}`,
+  };
+
   return (
     <>
+      <Head>
+        <title>{headData.title}</title>
+        <meta name="description" content={headData.description} />
+      </Head>
       <section id="search-form" className="container px-3 mx-auto">
         <div className="container flex flex-col">
           <h1 className="capitalize text-5xl w-full mb-4">

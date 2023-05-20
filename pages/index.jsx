@@ -11,9 +11,18 @@ import Button from "@/components/shared/Button";
 export default function Home() {
   const { t } = useTranslation(["common", "home"]);
 
+  const headData = {
+    title: `${t("common:brand")} | ${t("common:subtitle2")}`,
+    description: `${t("home:brand_subtitle2")}`,
+  };
+
   return (
     <>
-      <div className="relative w-full">
+      <Head>
+        <title>{headData.title}</title>
+        <meta name="description" content={headData.description} />
+      </Head>
+      <section className="relative w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div>
         <div className="absolute inset-0 opacity-90 z-10">
           {/* <Image
@@ -43,12 +52,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
-      <br />
-      <br />
-      <section>
-        <Link href="http://selfcare.zad.sy/adsl/register/step1"></Link>
       </section>
+      <br />
+      <br />
+      <Link href="http://selfcare.zad.sy/adsl/register/step1"></Link>
     </>
   );
 }
