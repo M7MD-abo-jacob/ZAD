@@ -1,17 +1,16 @@
 import React, { useRef } from "react";
+import { DoubleSide, TextureLoader } from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
-import { DoubleSide } from "three";
-import { TextureLoader } from "three";
+import { Stars } from "@react-three/drei";
 
-export default function Earth(props) {
+export default function Earth() {
   const [colorMap, normalMap, specularMap, cloudsMap, nightMap] = useLoader(
     TextureLoader,
     [
       "/assets/textures/earth/earth_daymap.jpg",
       "/assets/textures/earth/earth_normal_map.jpg",
       "/assets/textures/earth/earth_specular_map.jpg",
-      "/assets/textures/earth/earth_clouds.jpg",
+      "/assets/textures/earth/earth_clouds.png",
       "/assets/textures/earth/earth_nightmap.jpg",
     ]
   );
@@ -23,7 +22,8 @@ export default function Earth(props) {
     const elapsedTime = clock.getElapsedTime();
 
     earthRef.current.rotation.y = elapsedTime / 6;
-    cloudsRef.current.rotation.y = elapsedTime / 10;
+    cloudsRef.current.rotation.y = elapsedTime / 8;
+    // cloudsRef.current.rotation.y = elapsedTime / 10;
     // cloudsRef.current.rotation.x = elapsedTime / -20;
     if (window.__theme === "dark") {
       earthRef.current.material.map = nightMap;
@@ -53,7 +53,7 @@ export default function Earth(props) {
         <sphereGeometry args={[1.01, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
-          opacity={0.4}
+          opacity={1}
           depthWrite={true}
           transparent={true}
           side={DoubleSide}
