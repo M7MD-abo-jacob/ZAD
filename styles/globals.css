@@ -23,8 +23,8 @@ html.dark {
   --accent-clr: 204, 84%, 55%;
 
   --foreground-rgb: 0, 0%, 98%;
-  --background-start-rgb: 223, 93%, 5%;
-  --background-end-rgb: 222, 100%, 2%;
+  --background-start-rgb: 223, 100%, 3%;
+  --background-end-rgb: 223, 64%, 4%;
 }
 
 @media screen(lg) {
@@ -54,6 +54,8 @@ body {
     hsl(var(--background-start-rgb)),
     hsl(var(--background-end-rgb))
   );
+  background-attachment: fixed;
+  background-position: center;
   font-family: "Raleway", sans-serif;
 }
 

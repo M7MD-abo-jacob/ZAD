@@ -27,12 +27,12 @@ export default function NewTicketPage() {
   // TODO: add placeholders
   return (
     <section className="container mx-auto">
-      <h2 className="text-center text-xl font-bold">
+      <h2 className="text-center text-xl font-bold uppercase">
         {t("newTicket:enter_details")}
       </h2>
       <p
         id="error"
-        className="text-center text-red-600 dark:text-red-400 font-semibold"
+        className="text-center text-red-600 dark:text-red-400 font-semibold capitalize"
       >
         {t("newTicket:enter_correctly")}
       </p>
@@ -48,9 +48,10 @@ export default function NewTicketPage() {
       >
         {/* -------------------- NAME -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:name")}</label>
+          <label htmlFor="name">{t("newTicket:name")}</label>
           <input
             type="text"
+            id="name"
             name="name"
             required
             size="25"
@@ -66,10 +67,11 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- EMAIL -------------------- */}
         <div className={`label-input `}>
-          <label nowrap="">{t("newTicket:email")}</label>
+          <label htmlFor="email">{t("newTicket:email")}</label>
           <input
             type="text"
             name="email"
+            id="email"
             required
             size="25"
             value={reducerState.email}
@@ -84,7 +86,7 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- USER_NAME -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:user_name")}</label>
+          <label htmlFor="user_name">{t("newTicket:user_name")}</label>
           <input
             type="text"
             id="user_name"
@@ -103,10 +105,11 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- PHONE -------------------- */}
         <div className="label-input">
-          <label nowrap="">{t("newTicket:phone")}</label>
+          <label htmlFor="phone">{t("newTicket:phone")}</label>
           <input
             type="text"
             name="phone"
+            id="phone"
             size="25"
             value={reducerState.phone}
             onChange={(e) =>
@@ -120,7 +123,7 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- PHONE_EXT -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:phone_ext")}</label>
+          <label htmlFor="phone_ext">{t("newTicket:phone_ext")}</label>
           <select
             name="phone_ext"
             id="phone_ext"
@@ -154,10 +157,11 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- MOBILE_NO -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:mobile_no")}</label>
+          <label htmlFor="mobile_no">{t("newTicket:mobile_no")}</label>
           <input
             type="text"
             name="mobile_no"
+            id="mobile_no"
             size="25"
             value={reducerState.mobile_no}
             onChange={(e) =>
@@ -171,10 +175,10 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- deptID -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:deptId")}</label>
+          <label htmlFor="deptId">{t("newTicket:deptId")}</label>
           <select
-            id="deptId"
             name="deptId"
+            id="deptId"
             required
             value={reducerState.deptId}
             onChange={(e) =>
@@ -200,10 +204,11 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- SUBJECT -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:subject")}</label>
+          <label htmlFor="subject">{t("newTicket:subject")}</label>
           <input
             type="text"
             name="subject"
+            id="subject"
             required
             size="35"
             value={reducerState.subject}
@@ -218,10 +223,10 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- MESSAGE -------------------- */}
         <div className="label-input">
-          <label valign="top">{t("newTicket:message")}</label>
+          <label htmlFor="message">{t("newTicket:message")}</label>
           <textarea
-            id="message"
             name="message"
+            id="message"
             required
             cols="35"
             rows="8"
@@ -238,9 +243,10 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- PRI -------------------- */}
         <div className="label-input">
-          <label>{t("newTicket:pri")}</label>
+          <label htmlFor="pri">{t("newTicket:pri")}</label>
           <select
             name="pri"
+            id="pri"
             value={reducerState.pri}
             onChange={(e) =>
               dispatch({
@@ -257,11 +263,12 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- CAPTCHA -------------------- */}
         <div className="label-input">
-          <label valign="top">{t("newTicket:captcha")}</label>
+          <label htmlFor="captcha">{t("newTicket:captcha")}</label>
           <img src="/assets/captcha.png" border="0" align="left" />
           <input
             type="text"
             name="captcha"
+            id="captcha"
             required
             // TODO: translate
             placeholder={t("newTicket:captcha_placeholder")}
@@ -278,7 +285,7 @@ export default function NewTicketPage() {
         </div>
         {/* -------------------- BUTTONS -------------------- */}
         <div
-          class="flex flex-col md:flex-row gap-5 justify-center mt-5 rounded-md shadow-sm"
+          className="flex flex-col md:flex-row gap-5 justify-center mt-5 rounded-md shadow-sm"
           role="group"
         >
           {/* -------------------- SEND BUTTON -------------------- */}

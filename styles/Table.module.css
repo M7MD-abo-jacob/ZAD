@@ -26,7 +26,7 @@
 @media screen(lg) {
   .wrapper {
     width: min-content;
-    min-width: 50%;
+    /* min-width: 50%; */
   }
 }
 
@@ -39,14 +39,14 @@
   width: 100%;
   background: hsl(var(--accent-clr), 20%);
   text-align: center;
-  padding: 0.25em 0.5em 0.5em 0.5em;
+  padding: 0.5em;
   border-start-start-radius: 10px !important;
   border-start-end-radius: 10px !important;
 }
 
 .table th,
 .table td {
-  padding: 0.25em 0.5em 0.25em 1em;
+  padding: 0.5em;
   text-align: center;
   text-indent: -0.5em;
 }

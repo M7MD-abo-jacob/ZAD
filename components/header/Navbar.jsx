@@ -26,8 +26,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50  shadow-lg">
       {/* -------------------- TOP BAR -------------------- */}
-      <div className=" mx-auto bg-gray-50 dark:bg-gray-950">
-        <div className="container flex items-center justify-between w-full px-4 py-2 lg:py-3 bg-gray-50 dark:bg-gray-950 mx-auto">
+      <div className=" mx-auto bg-gray-50 dark:bg-zinc-950">
+        <div className="container flex items-center justify-between w-full px-4 py-2 bg-gray-50 dark:bg-zinc-950 mx-auto">
           <Link href="/" className="flex items-center">
             <Image
               src={logoImg}
@@ -84,14 +84,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <hr className="hidden lg:block dark:bg-gray-50 bg-gray-950" />
+      <hr className="hidden lg:block dark:bg-gray-50 bg-zinc-950" />
 
       {/* -------------------- BOTTOM NAV BAR / DROPDOWN on small screens -------------------- */}
       <div
         className={`${
           expanded ? "w-full" : "hidden"
-        } lg:block mx-auto w-full h-screen lg:h-auto backdrop-blur-sm lg:bg-gray-50 dark:lg:bg-gray-950`}
-        // bg-white dark:bg-gray-950
+        } lg:block mx-auto w-full h-screen lg:h-auto backdrop-blur-sm lg:bg-gray-50 dark:lg:bg-zinc-950`}
         onClick={() => {
           setExpanded(false);
         }}
@@ -99,7 +98,7 @@ export default function Navbar() {
         {/* -------------------- personal info if logged in -------------------- */}
         <div
           id="personal-account"
-          className="container mx-auto block lg:hidden w-full rounded-lg px-4 py-3 bg-gray-50 dark:bg-gray-950 text-center"
+          className="container mx-auto block lg:hidden w-full rounded-lg px-4 py-3 bg-gray-50 dark:bg-zinc-950 text-center"
           onClick={(e) => {
             // e.stopPropagation();
             // e.preventDefault();
@@ -118,13 +117,14 @@ export default function Navbar() {
                 </div>
                 <div className="flex flex-col justify-around m-2">
                   <h2 className="fs-3 fw-bold">username</h2>
-                  <h3 className="fs-6">@ username</h3>
+                  <h3 className="fs-6">@username</h3>
                   <div className="fs-6">
                     <BsGeoAlt className="inline-block me-1" />
                     Damascus
                   </div>
                 </div>
                 {/* -------------------- LANGUAGE BUTTON -------------------- */}
+                {/* TODO: set languages */}
                 <div className="flex flex-col justify-around m-2">
                   <Button
                     className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-gray-400"
@@ -178,7 +178,7 @@ export default function Navbar() {
           )}
         </div>
         {/* -------------------- MAIN NAVIGATION LIST -------------------- */}
-        <ul className="container mx-auto font-medium flex flex-col lg:justify-between text-center p-4 lg:p-0 mt-0 border border-gray-100 bg-gray-50 dark:bg-gray-950 rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0">
+        <ul className="container mx-auto font-medium flex flex-col lg:justify-between text-center p-4 lg:p-0 mt-0 border border-gray-100 bg-gray-50 dark:bg-zinc-950 rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0">
           {links.map((link) => {
             const Icon = link.icon;
             return (

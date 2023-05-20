@@ -7,7 +7,7 @@ export default function ContactPage() {
   const { t } = useTranslation(["common", "contact"]);
 
   return (
-    <section id="contact-us" className="container mx-auto">
+    <section id="contact-us" className="container mx-auto px-3">
       <h1 className="text-5xl">{t("common:contact")}</h1>
       <p>{t("contact:contact_p")}</p>
       <br />

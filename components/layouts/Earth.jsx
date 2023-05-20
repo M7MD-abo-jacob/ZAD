@@ -23,7 +23,8 @@ export default function Earth(props) {
     const elapsedTime = clock.getElapsedTime();
 
     earthRef.current.rotation.y = elapsedTime / 6;
-    cloudsRef.current.rotation.y = elapsedTime / 6;
+    cloudsRef.current.rotation.y = elapsedTime / 10;
+    // cloudsRef.current.rotation.x = elapsedTime / -20;
     if (window.__theme === "dark") {
       earthRef.current.material.map = nightMap;
     }

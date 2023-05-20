@@ -6,6 +6,10 @@
   padding: 5px 10px;
   /* margin: 0 10px; */
 }
+.ticket_form label {
+  text-transform: capitalize;
+}
+
 .ticket_form input,
 .ticket_form label,
 .ticket_form select,

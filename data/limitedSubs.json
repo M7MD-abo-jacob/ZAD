@@ -1,37 +1,38 @@
-[{
-        "adsl:speed": "512 KB",
-        "adsl:bandwidth": "30 GB",
-        "adsl:speed_when_over": "256 KB",
-        "adsl:price": 6500
-    },
-    {
-        "adsl:speed": "1 MB",
-        "adsl:bandwidth": "50 GB",
-        "adsl:speed_when_over": "256 KB",
-        "adsl:price": 7500
-    },
-    {
-        "adsl:speed": "2 MB",
-        "adsl:bandwidth": "85 GB",
-        "adsl:speed_when_over": "256 KB",
-        "adsl:price": 10000
-    },
-    {
-        "adsl:speed": "4 MB",
-        "adsl:bandwidth": "140 GB",
-        "adsl:speed_when_over": "512 KB",
-        "adsl:price": 15680
-    },
-    {
-        "adsl:speed": "8 MB",
-        "adsl:bandwidth": "175 GB",
-        "adsl:speed_when_over": "1 MB",
-        "adsl:price": 26880
-    },
-    {
-        "adsl:speed": "16 MB",
-        "adsl:bandwidth": "225 GB",
-        "adsl:speed_when_over": "2 MB",
-        "adsl:price": 34720
-    }
+[
+  {
+    "adsl:speed": "512 Kb/s",
+    "adsl:bandwidth": "30 GB",
+    "adsl:speed_when_over": "256 Kb/s",
+    "adsl:price": 6500
+  },
+  {
+    "adsl:speed": "1 Mb/s",
+    "adsl:bandwidth": "50 GB",
+    "adsl:speed_when_over": "256 Kb/s",
+    "adsl:price": 7500
+  },
+  {
+    "adsl:speed": "2 Mb/s",
+    "adsl:bandwidth": "85 GB",
+    "adsl:speed_when_over": "256 Kb/s",
+    "adsl:price": 10000
+  },
+  {
+    "adsl:speed": "4 Mb/s",
+    "adsl:bandwidth": "140 GB",
+    "adsl:speed_when_over": "512 Kb/s",
+    "adsl:price": 15680
+  },
+  {
+    "adsl:speed": "8 Mb/s",
+    "adsl:bandwidth": "175 GB",
+    "adsl:speed_when_over": "1 Mb/s",
+    "adsl:price": 26880
+  },
+  {
+    "adsl:speed": "16 Mb/s",
+    "adsl:bandwidth": "225 GB",
+    "adsl:speed_when_over": "2 Mb/s",
+    "adsl:price": 34720
+  }
 ]
