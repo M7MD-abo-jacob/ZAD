@@ -34,8 +34,14 @@ export default function AgentsService({ service, children }) {
           )}
         </button>
       </h3>
-      {show && children}
-      {/* <p className="mb-3">{t(`agents:${service}_details`)}</p> */}
+      <div
+        className="grid"
+        style={{
+          gridTemplateRows: `${show ? "1fr" : "0fr"}`,
+        }}
+      >
+        <div className="overflow-hidden">{children}</div>
+      </div>
     </li>
   );
 }

@@ -6,7 +6,7 @@ html {
   --light-clr: 0, 0%, 98%;
   --light-muted-clr: 192, 100%, 98%;
   --dark-clr: 222, 100%, 2%;
-  --dark-muted-clr: 220, 17%, 21%;
+  --muted-clr: 219, 6%, 71%;
   --primary-clr: 205, 100%, 37%;
   --accent-clr: 204, 100%, 37%;
   --accent-clr: 196, 100%, 47%;
@@ -21,6 +21,7 @@ html {
 html.dark {
   --primary-clr: 196, 76%, 62%;
   --accent-clr: 204, 84%, 55%;
+  --muted-clr: 220, 17%, 16%;
 
   --foreground-rgb: 0, 0%, 98%;
   --background-start-rgb: 223, 100%, 3%;
@@ -45,6 +46,11 @@ html.dark {
   .label-input {
     @apply flex flex-auto flex-col sm:flex-row py-2 px-4 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-75;
   }
+}
+
+/* to animate height for some elements */
+.grid {
+  transition: grid-template-rows 0.5s ease-in-out;
 }
 
 body {

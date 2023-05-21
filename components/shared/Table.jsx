@@ -19,8 +19,12 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
         role="table"
         className={`text-sm text-center w-full ${styles.table} ${tableClass}`}
       >
-        {caption && <caption role="caption">{caption}</caption>}
-        <thead role="rowgroup" className="text-xs uppercase border-b-2">
+        {caption && (
+          <caption role="caption" className="uppercase">
+            {caption}
+          </caption>
+        )}
+        <thead role="rowgroup" className="text-xs capitalize border-b-2">
           <tr role="row">
             {Object.keys(data[0]).map((element, i) => (
               <th key={i} role="columnheader" className="px-6 py-3">

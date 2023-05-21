@@ -9,6 +9,13 @@
 .ticket_form label {
   text-transform: capitalize;
 }
+.ticket_form input,
+.ticket_form textarea,
+.ticket_form select {
+  /* dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white */
+  color: hsl(var(--foreground-rgb)) !important;
+  background-color: hsl(var(--muted-clr));
+}
 
 .ticket_form input,
 .ticket_form label,

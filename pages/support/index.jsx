@@ -30,7 +30,7 @@ export default function SupportPage() {
 
       <div className="flex flex-col md:flex-row justify-between container mx-auto px-4">
         <section id="card-status" className="w-full mt-4 px-4">
-          <h2 className="text-2xl mb-2">
+          <h2 className="text-2xl mb-2 capitalize">
             {/* TODO: css icon colors */}
             <MdPlaylistAddCheck className="inline-block text-5xl me-2" />
             <span>{t("support:status_header")}</span>
@@ -42,7 +42,7 @@ export default function SupportPage() {
         <hr />
 
         <section id="new-card" className="w-full mt-4 px-4">
-          <h2 className="text-2xl mb-2">
+          <h2 className="text-2xl mb-2 capitalize">
             <MdPlaylistAdd className="inline-block text-5xl me-2" />
             <span>{t("support:new_header")}</span>
           </h2>
