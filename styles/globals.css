@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  transition: all 60000 ease-in-out !important;
+  scroll-behavior: smooth !important;
+}
 html {
   --light-clr: 0, 0%, 98%;
   --light-muted-clr: 192, 100%, 98%;

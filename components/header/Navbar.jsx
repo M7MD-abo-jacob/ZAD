@@ -112,8 +112,8 @@ export default function Navbar() {
               {/* TODO: add lgin logic and change static data to user */}
               {true ? (
                 <>
-                  <div className="flex  justify-center max-h-40 w-fit">
-                    <div className="flex justify-center w-1/2">
+                  <div className="flex w-full gap-2 justify-center items-center max-h-40 w-fit">
+                    {/* <div className="flex justify-center w-1/2">
                       <img
                         className="w-full md:w-1/2 object-contain aspect-square"
                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
@@ -127,12 +127,12 @@ export default function Navbar() {
                         <BsGeoAlt className="inline-block me-1" />
                         Damascus
                       </div>
-                    </div>
+                    </div> */}
                     {/* -------------------- LANGUAGE BUTTON -------------------- */}
                     {/* TODO: set languages */}
-                    <div className="flex flex-col justify-around m-2">
+                    <div className="flex flex-row w-full justify-around m-2">
                       <Button
-                        className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-gray-400"
+                        className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
                         disabled={locale === "en" ? true : false}
                         onClick={() => {
                           replace({ pathname, query }, asPath, {
@@ -144,7 +144,7 @@ export default function Navbar() {
                         en
                       </Button>
                       <Button
-                        className="inline-flex justify-self-end items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                        className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
                         disabled={locale === "ar" ? true : false}
                         onClick={() => {
                           replace({ pathname, query }, asPath, {

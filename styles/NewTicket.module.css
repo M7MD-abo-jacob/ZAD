@@ -12,6 +12,7 @@
 .ticket_form input,
 .ticket_form textarea,
 .ticket_form select {
+  /* TODO: make colors */
   /* dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white */
   color: hsl(var(--foreground-rgb)) !important;
   background-color: hsl(var(--muted-clr));

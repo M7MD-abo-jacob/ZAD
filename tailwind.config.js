@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        DEFAULT: "250ms",
+      },
       colors: {
         primary: "hsl(var(--primary-clr))",
         "primary-transparent": "hsl(var(--primary-clr), 0.2)",
