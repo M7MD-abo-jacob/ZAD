@@ -1,5 +1,4 @@
 import { useTranslation } from "next-i18next";
-import React from "react";
 import styles from "@/styles/Table.module.css";
 
 export default function Table({ data, caption, wrapperClass, tableClass }) {

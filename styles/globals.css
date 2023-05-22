@@ -91,11 +91,11 @@ footer .accent {
 
 /* -------------------- FOOTER SVG -------------------- */
 .path-0 {
-  animation: pathAnim-0 4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: pathAnim 4s linear infinite;
+  /* animation-timing-function: linear;
+  animation-iteration-count: infinite; */
 }
-@keyframes pathAnim-0 {
+@keyframes pathAnim {
   0% {
     d: path(
       "M 0,400 C 0,400 0,200 0,200 C 125.39285714285717,176.21428571428572 250.78571428571433,152.42857142857142 384,156 C 517.2142857142857,159.57142857142858 658.2499999999999,190.50000000000003 777,213 C 895.7500000000001,235.49999999999997 992.2142857142858,249.57142857142856 1099,246 C 1205.7857142857142,242.42857142857144 1322.892857142857,221.21428571428572 1440,200 C 1440,200 1440,400 1440,400 Z"

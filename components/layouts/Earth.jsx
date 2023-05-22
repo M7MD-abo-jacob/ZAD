@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { DoubleSide, TextureLoader } from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";

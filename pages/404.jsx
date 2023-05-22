@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   const { back } = useRouter();
   const { t } = useTranslation(["common", "404"]);
 
@@ -35,9 +35,7 @@ const NotFoundPage = () => {
       </section>
     </>
   );
-};
-
-export default NotFoundPage;
+}
 
 export async function getStaticProps({ locale }) {
   return {

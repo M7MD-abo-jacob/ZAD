@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import { BsGooglePlay } from "react-icons/bs";
 import { links } from "@/data/links";
 
-const Footer = () => {
+export default function Footer() {
   const { t } = useTranslation();
 
   return (
@@ -56,6 +56,4 @@ const Footer = () => {
       </div>
     </>
   );
-};
-
-export default Footer;
+}

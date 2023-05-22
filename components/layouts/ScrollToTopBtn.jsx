@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BsCaretUp } from "react-icons/bs";
 import Button from "../shared/Button";
 
-const ScrollToTopBtn = () => {
+export default function ScrollToTopBtn() {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
@@ -30,6 +30,4 @@ const ScrollToTopBtn = () => {
       )}
     </>
   );
-};
-
-export default ScrollToTopBtn;
+}

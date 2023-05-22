@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-const MyDocument = ({ __NEXT_DATA__: { locale } }) => {
+export default function MyDocument({ __NEXT_DATA__: { locale } }) {
   return (
     <Html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <Head>
@@ -38,7 +38,7 @@ const MyDocument = ({ __NEXT_DATA__: { locale } }) => {
         <meta property="og:site_name" content="zad" />
         <meta property="og:url" content="https://zad.sy/" />
       </Head>
-      <body>
+      <body className="transition-all">
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -89,6 +89,4 @@ const MyDocument = ({ __NEXT_DATA__: { locale } }) => {
       </body>
     </Html>
   );
-};
-
-export default MyDocument;
+}
