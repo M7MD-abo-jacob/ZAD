@@ -3,7 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import {
+  MdOutlineDarkMode,
+  MdOutlineLightMode,
+  MdOutlinePerson4,
+} from "react-icons/md";
 import { RxPerson } from "react-icons/rx";
 import { CgClose, CgMenu } from "react-icons/cg";
 import Button from "../shared/Button";
@@ -66,13 +70,15 @@ export default function Navbar() {
               )}
             </button>
             {/* -------------------- ACCOUNT BTN -------------------- */}
-            <button
-              onClick={() => setExpanded((prev) => !prev)}
-              type="button"
+            <Link
+              href="/account"
+              // <button
               className="group/btn inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              <RxPerson className="group-hover/btn:scale-125 duration-200" />
-            </button>
+              {/* <RxPerson className="group-hover/btn:scale-125 duration-200" /> */}
+              <MdOutlinePerson4 className="group-hover/btn:scale-125 duration-200" />
+              {/* </button> */}
+            </Link>
 
             {/* -------------------- MENU BTN -------------------- */}
             <button
@@ -119,7 +125,7 @@ export default function Navbar() {
               {/* TODO: add lgin logic and change static data to user */}
               {true ? (
                 <>
-                  <div className="flex w-full gap-2 justify-center items-center max-h-40 w-fit">
+                  <div className="flex w-full gap-2 justify-center items-center max-h-40">
                     {/* <div className="flex justify-center w-1/2">
                       <img
                         className="w-full md:w-1/2 object-contain aspect-square"

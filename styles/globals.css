@@ -11,6 +11,7 @@ html {
   --light-muted-clr: 192, 100%, 98%;
   --dark-clr: 222, 100%, 2%;
   --muted-clr: 219, 6%, 71%;
+  --muted-light: 0, 0%, 49%;
   --primary-clr: 205, 100%, 37%;
   --accent-clr: 204, 100%, 37%;
   --accent-clr: 196, 100%, 47%;
@@ -26,6 +27,7 @@ html.dark {
   --primary-clr: 204, 84%, 55%;
   --accent-clr: 196, 76%, 62%;
   --muted-clr: 220, 17%, 16%;
+  --muted-light: 223, 10%, 73%;
 
   --foreground-rgb: 0, 0%, 98%;
   --background-start-rgb: 223, 100%, 3%;

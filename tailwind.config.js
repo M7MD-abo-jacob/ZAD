@@ -22,6 +22,7 @@ module.exports = {
         DEFAULT: "250ms",
       },
       colors: {
+        muted: "hsl(var(--muted-light))",
         primary: "hsl(var(--primary-clr))",
         "primary-transparent": "hsl(var(--primary-clr), 0.2)",
         "primary-semitransparent": "hsl(var(--primary-clr), 0.5)",
