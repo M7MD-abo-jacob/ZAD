@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { RxPerson } from "react-icons/rx";
-import Image from "next/image";
 import { CgClose, CgMenu } from "react-icons/cg";
 import Button from "../shared/Button";
 import { links } from "@/data/links";
 import logoImg from "@/public/assets/zad-logo.png";
-import { BsGeoAlt } from "react-icons/bs";
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -50,7 +49,7 @@ export default function Navbar() {
             >
               {locale === "ar" ? "en" : "ar"}
             </button>
-            {/* -------------------- THEME BTN -------------------- */}
+            {/* -------------------- DARK THEME BTN -------------------- */}
             <button
               onClick={() => {
                 setDarkChecked((prev) => !prev);
@@ -58,17 +57,21 @@ export default function Navbar() {
                 window.__setPreferredTheme(newTheme);
               }}
               type="button"
-              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              className="group/btn inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
             >
-              {darkChecked ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+              {darkChecked ? (
+                <MdOutlineLightMode className="group-hover/btn:animate-spin-slow" />
+              ) : (
+                <MdOutlineDarkMode className="group-hover/btn:animate-wiggle" />
+              )}
             </button>
             {/* -------------------- ACCOUNT BTN -------------------- */}
             <button
               onClick={() => setExpanded((prev) => !prev)}
               type="button"
-              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              className="group/btn inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              <RxPerson />
+              <RxPerson className="group-hover/btn:scale-125 duration-200" />
             </button>
 
             {/* -------------------- MENU BTN -------------------- */}
@@ -76,9 +79,13 @@ export default function Navbar() {
               onClick={() => setExpanded((prev) => !prev)}
               data-collapse-toggle="navbar-default"
               type="button"
-              className="inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              className="group/btn inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              {expanded ? <CgClose /> : <CgMenu />}
+              {expanded ? (
+                <CgClose className="group-hover/btn:animate-wiggle" />
+              ) : (
+                <CgMenu className="group-hover/btn:scale-125 duration-200" />
+              )}
             </button>
           </div>
         </div>
@@ -132,7 +139,7 @@ export default function Navbar() {
                     {/* TODO: set languages */}
                     <div className="flex flex-row w-full justify-around m-2">
                       <Button
-                        className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                        className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 disabled:shadow-none disabled:hover:shadow-none dark:disabled:bg-blue-300"
                         disabled={locale === "en" ? true : false}
                         onClick={() => {
                           replace({ pathname, query }, asPath, {

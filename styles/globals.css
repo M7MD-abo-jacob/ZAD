@@ -23,8 +23,8 @@ html {
 }
 
 html.dark {
-  --primary-clr: 196, 76%, 62%;
-  --accent-clr: 204, 84%, 55%;
+  --primary-clr: 204, 84%, 55%;
+  --accent-clr: 196, 76%, 62%;
   --muted-clr: 220, 17%, 16%;
 
   --foreground-rgb: 0, 0%, 98%;

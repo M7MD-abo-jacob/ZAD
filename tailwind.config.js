@@ -8,6 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-20deg)" },
+          "50%": { transform: "rotate(20deg)" },
+        },
+      },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
       transitionDuration: {
         DEFAULT: "250ms",
       },

@@ -34,7 +34,10 @@ export default function Footer() {
             <ul className="list-unstyled">
               {links.map((link) => (
                 <li key={link.title}>
-                  <Link href={link.href} className="text-primary">
+                  <Link
+                    href={link.href}
+                    className="text-primary hover:text-accent duration-200 hover:drop-shadow-lg hover:drop-shadow-accent "
+                  >
                     {t(link.title)}
                   </Link>
                 </li>
