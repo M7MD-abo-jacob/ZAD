@@ -1,4 +1,5 @@
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function FinancialReport() {
   const { t } = useTranslation(["common", "account"]);
