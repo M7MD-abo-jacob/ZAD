@@ -4,5 +4,8 @@
   "username": "username",
   "paid_until": "subscription paid until",
   "speed": "subscription speed",
-  "phone": "phone number"
+  "phone": "phone number",
+
+  "change_password": "change password",
+  "financial_report": "financial report"
 }
