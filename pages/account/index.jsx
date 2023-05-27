@@ -51,20 +51,16 @@ export default function Account() {
         </dl>
       </section>
       <section id="actions">
-        {/* {showActions && ( */}
-        <>
-          <div
-            onClick={() => {
-              setShowActions((prev) => !prev);
-            }}
-            className={`${
-              showActions ? "block" : "hidden"
-            } bg-zinc-500 backdrop-blur-sm bg-opacity-30 fixed inset-0 h-screen w-screen`}
-          >
-            hi
-          </div>
-        </>
-        {/* )} */}
+        <div
+          onClick={() => {
+            setShowActions((prev) => !prev);
+          }}
+          className={`${
+            showActions ? "block" : "hidden"
+          } bg-zinc-500 backdrop-blur-sm bg-opacity-30 fixed inset-0 h-screen w-screen`}
+        >
+          hi
+        </div>
         <div className={`group/btns ${showActions ? "shown" : "notshown"}`}>
           <Button
             onClick={() => {
