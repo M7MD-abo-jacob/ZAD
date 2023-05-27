@@ -7,5 +7,6 @@
   "phone": "phone number",
 
   "change_password": "change password",
-  "financial_report": "financial report"
+  "financial_report": "financial report",
+  "logout": "log out"
 }

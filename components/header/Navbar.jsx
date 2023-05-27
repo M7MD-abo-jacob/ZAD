@@ -16,10 +16,10 @@ import logoImg from "@/public/assets/zad-logo.png";
 
 export default function Navbar() {
   const { t } = useTranslation();
+  const { locales } = useRouter();
   const { pathname, query, asPath, locale, replace } = useRouter();
   const [expanded, setExpanded] = useState(false);
   const [darkChecked, setDarkChecked] = useState(false);
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       setDarkChecked(window.__theme == "dark");
@@ -43,7 +43,7 @@ export default function Navbar() {
             {/* -------------------- LANGUAGE BTN -------------------- */}
             <button
               type="button"
-              className="hidden lg:inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              className="group/btn hidden lg:inline-flex items-center p-2 ms-0 md:ms-3 text-4xl font-medium text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
               onClick={() => {
                 replace({ pathname, query }, asPath, {
                   locale: locale === "ar" ? "en" : "ar",
@@ -51,7 +51,9 @@ export default function Navbar() {
                 document.documentElement.dir = locale === "ar" ? "ltr" : "rtl";
               }}
             >
-              {locale === "ar" ? "en" : "ar"}
+              <span className="group-hover/btn:scale-125 transition-all">
+                {locale === "ar" ? "en" : "ar"}
+              </span>
             </button>
             {/* -------------------- DARK THEME BTN -------------------- */}
             <button
@@ -142,32 +144,23 @@ export default function Navbar() {
                       </div>
                     </div> */}
                     {/* -------------------- LANGUAGE BUTTON -------------------- */}
-                    {/* TODO: set languages */}
                     <div className="flex flex-row w-full justify-around m-2">
-                      <Button
-                        className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 disabled:shadow-none disabled:hover:shadow-none dark:disabled:bg-blue-300"
-                        disabled={locale === "en" ? true : false}
-                        onClick={() => {
-                          replace({ pathname, query }, asPath, {
-                            locale: "en",
-                          });
-                          document.documentElement.dir = "ltr";
-                        }}
-                      >
-                        en
-                      </Button>
-                      <Button
-                        className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
-                        disabled={locale === "ar" ? true : false}
-                        onClick={() => {
-                          replace({ pathname, query }, asPath, {
-                            locale: "ar",
-                          });
-                          document.documentElement.dir = "rtl";
-                        }}
-                      >
-                        ar
-                      </Button>
+                      {locales.map((language) => (
+                        <Button
+                          key={language}
+                          className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                          disabled={locale === language ? true : false}
+                          onClick={() => {
+                            replace({ pathname, query }, asPath, {
+                              locale: language,
+                            });
+                            document.documentElement.dir =
+                              language === "ar" ? "rtl" : "ltr";
+                          }}
+                        >
+                          {language}
+                        </Button>
+                      ))}
                     </div>
                   </div>
                   <hr className="mb-3" />

@@ -7,5 +7,6 @@
   "phone": "رقم الموبايل",
 
   "change_password": "تغيير كلمة المرور",
-  "financial_report": "البيان المالي"
+  "financial_report": "البيان المالي",
+  "logout": "تسجيل الخروج"
 }
