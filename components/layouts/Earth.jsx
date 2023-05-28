@@ -52,7 +52,6 @@ export default function Earth() {
 
   return (
     <>
-      {/* Rotate the group at an angle */}
       <ambientLight intensity={0.1} />
       <pointLight
         color="#f6f3ea"
