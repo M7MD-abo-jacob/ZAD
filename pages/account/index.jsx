@@ -68,12 +68,12 @@ export default function Account() {
             onClick={() => {
               setShowActions((prev) => !prev);
             }}
-            className="fixed bottom-4 left-8 shadow-md rounded-full px-2 py-2"
+            className="fixed bottom-4 start-8 shadow-md rounded-full px-2 py-2"
           >
             <FiSettings className="text-2xl font-bold group-[.shown]/btns:rotate-180 transition-transform duration-1000" />
           </Button>
           <div
-            className={`fixed grid bottom-16 left-8 group my-5 transition-all duration-1000`}
+            className={`fixed grid bottom-16 start-8 group my-5 transition-all duration-1000`}
             style={{
               gridTemplateRows: `${showActions ? "1fr" : "0fr"}`,
             }}
@@ -85,7 +85,7 @@ export default function Account() {
                 className="group/link flex gap-2 items-center"
               >
                 <Button className="group-hover/link:bg-accent group-hover/link:shadow-lg group-hover/link:shadow-accent">
-                  <RiLockPasswordLine className="group-hover/link:animate-wiggle text-2xl font-bold" />
+                  <RiLockPasswordLine className="group-hover/link:animate-heart-beat text-2xl font-bold" />
                 </Button>
                 <span className="text-lg font-bold">
                   {t("account:change_password")}
@@ -97,7 +97,7 @@ export default function Account() {
                 className="group/link flex gap-2 items-center"
               >
                 <Button className="group-hover/link:bg-accent group-hover/link:shadow-lg group-hover/link:shadow-accent">
-                  <TbReportMoney className="group-hover/link:animate-wiggle text-2xl font-bold" />
+                  <TbReportMoney className="group-hover/link:animate-heart-beat text-2xl font-bold" />
                 </Button>
                 <span className="text-lg font-bold">
                   {t("account:financial_report")}
@@ -109,7 +109,7 @@ export default function Account() {
                 className="group/link flex gap-2 items-center"
               >
                 <Button className="group-hover/link:bg-accent group-hover/link:shadow-lg group-hover/link:shadow-accent">
-                  <FiLogOut className="group-hover/link:animate-wiggle text-2xl font-bold" />
+                  <FiLogOut className="group-hover/link:animate-heart-beat text-2xl font-bold" />
                 </Button>
                 <span className="text-lg font-bold">{t("account:logout")}</span>
               </Link>

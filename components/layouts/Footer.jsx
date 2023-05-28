@@ -36,7 +36,7 @@ export default function Footer() {
                 <li key={link.title}>
                   <Link
                     href={link.href}
-                    className="text-primary hover:text-accent duration-200 hover:drop-shadow-lg hover:drop-shadow-accent "
+                    className="block w-full h-full py-0.5 px-1 text-primary hover:text-accent duration-200 hover:drop-shadow-lg hover:drop-shadow-accent "
                   >
                     {t(link.title)}
                   </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
         <span>&#169; {new Date().getFullYear()}</span>
         <a
           href="https://m7md-abo-jacob.github.io/uShopia---my-fake-store/"
-          className="text-primary"
+          className="text-primary hover:text-accent"
         >
           {` ${t("common:author")} `}
         </a>

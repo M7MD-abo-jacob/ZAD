@@ -13,10 +13,18 @@ module.exports = {
           "0%, 100%": { transform: "rotate(-20deg)" },
           "50%": { transform: "rotate(20deg)" },
         },
+        "heart-beat": {
+          "0%": { transform: "scale(1);" },
+          "14%": { transform: "scale(1.3);" },
+          "28%": { transform: "scale(1);" },
+          "42%": { transform: "scale(1.3);" },
+          "70%": { transform: "scale(1);" },
+        },
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
+        "heart-beat": "heart-beat 1s infinite",
       },
       transitionDuration: {
         DEFAULT: "250ms",

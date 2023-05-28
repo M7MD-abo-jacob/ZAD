@@ -1,9 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { DoubleSide, TextureLoader } from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
+import { useRouter } from "next/router";
 
 export default function Earth() {
+  const { locale } = useRouter();
+  const position = locale === "ar" ? [-1, 0, 3] : [1, 0, 3];
   const [colorMap, normalMap, specularMap, cloudsMap, nightMap] = useLoader(
     TextureLoader,
     [
@@ -21,24 +24,41 @@ export default function Earth() {
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
 
+    // rotate each frame
     earthRef.current.rotation.y = elapsedTime / 6;
     cloudsRef.current.rotation.y = elapsedTime / 8;
-    // cloudsRef.current.rotation.y = elapsedTime / 10;
-    // cloudsRef.current.rotation.x = elapsedTime / -20;
-    if (window.__theme === "dark") {
-      earthRef.current.material.map = nightMap;
-    }
-    if (window.__theme !== "dark") {
-      earthRef.current.material.map = colorMap;
-    }
-    // cloudsRef.current.rotation.x = elapsedTime / 1;
   });
+
+  useEffect(() => {
+    // change the map depending on the theme color
+    const handleThemeChange = () => {
+      if (window.__theme === "dark") {
+        console.log("dark");
+        earthRef.current.material.map = nightMap;
+      } else {
+        console.log("light");
+        earthRef.current.material.map = colorMap;
+      }
+    };
+
+    handleThemeChange(); // Initial call to handle the current theme
+
+    window.addEventListener("themechange", handleThemeChange); // Listen for theme change event
+
+    return () => {
+      window.removeEventListener("themechange", handleThemeChange); // Clean up the event listener when the component unmounts
+    };
+  }, []);
 
   return (
     <>
-      {/* <ambientLight intensity={0.1} /> */}
-      <pointLight color="#f6f3ea" position={[-50, 2, -5]} intensity={1.2} />
-      {/* <pointLight color="#f6f3ea" position={[2, 0, 5]} intensity={0} /> */}
+      {/* Rotate the group at an angle */}
+      <ambientLight intensity={0.1} />
+      <pointLight
+        color="#f6f3ea"
+        position={locale === "ar" ? [190, 2, -5] : [-90, 2, -5]}
+        intensity={1.2}
+      />
       {/* -------------------- STARS -------------------- */}
       <Stars
         radius={100}
@@ -49,7 +69,7 @@ export default function Earth() {
         fade={true}
       />
       {/* -------------------- CLOUDS -------------------- */}
-      <mesh ref={cloudsRef} position={[1, 0, 3]}>
+      <mesh ref={cloudsRef} position={position}>
         <sphereGeometry args={[1.01, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
@@ -60,7 +80,8 @@ export default function Earth() {
         />
       </mesh>
       {/* -------------------- EARTH -------------------- */}
-      <mesh ref={earthRef} position={[1, 0, 3]}>
+      {/* <group rotation={[1, 0, Math.PI / 3]}> */}
+      <mesh ref={earthRef} position={position} rotation={[Math.PI / 7, 0, 0]}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
@@ -69,15 +90,15 @@ export default function Earth() {
           metalness={0.4}
           roughness={0.7}
         />
-        {/* <OrbitControls
-          enableZoom={true}
-          enablePan={true}
-          enableRotate={true}
-          zoomSpeed={0.6}
-          panSpeed={0.5}
-          rotateSpeed={0.4}
-        /> */}
       </mesh>
+      {/* </group> */}
     </>
   );
 }
+
+// if (window.__theme === "dark") {
+//   earthRef.current.material.map = nightMap;
+// }
+// if (window.__theme !== "dark") {
+//   earthRef.current.material.map = colorMap;
+// }

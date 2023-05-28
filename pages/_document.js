@@ -51,6 +51,8 @@ export default function MyDocument({ __NEXT_DATA__: { locale } }) {
                 } else if (newTheme === 'light') {
                   document.documentElement.classList.remove('dark');
                 }
+                window.dispatchEvent(new Event("themechange"));
+                // Dispatch the themechange event for listeners
               }
               
               var preferredTheme;

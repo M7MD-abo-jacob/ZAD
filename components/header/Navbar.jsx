@@ -8,7 +8,6 @@ import {
   MdOutlineLightMode,
   MdOutlinePerson4,
 } from "react-icons/md";
-import { RxPerson } from "react-icons/rx";
 import { CgClose, CgMenu } from "react-icons/cg";
 import Button from "../shared/Button";
 import { links } from "@/data/links";
@@ -16,9 +15,9 @@ import logoImg from "@/public/assets/zad-logo.png";
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const { locales } = useRouter();
-  const { pathname, query, asPath, locale, replace } = useRouter();
+  const { pathname, query, asPath, locale, locales, replace } = useRouter();
   const [expanded, setExpanded] = useState(false);
+
   const [darkChecked, setDarkChecked] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -27,7 +26,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 shadow-md shadow-zinc-400 dark:shadow-zinc-700">
+    <nav className="fixed top-0 start-0 w-full z-50 shadow-md shadow-zinc-400 dark:shadow-zinc-700">
       {/* -------------------- TOP BAR -------------------- */}
       <div className=" mx-auto bg-gray-50 dark:bg-zinc-950">
         <div className="container flex items-center justify-between w-full px-4 py-2 bg-gray-50 dark:bg-zinc-950 mx-auto">
@@ -51,7 +50,7 @@ export default function Navbar() {
                 document.documentElement.dir = locale === "ar" ? "ltr" : "rtl";
               }}
             >
-              <span className="group-hover/btn:scale-125 transition-all">
+              <span className="group-hover/btn:animate-heart-beat">
                 {locale === "ar" ? "en" : "ar"}
               </span>
             </button>
@@ -74,12 +73,9 @@ export default function Navbar() {
             {/* -------------------- ACCOUNT BTN -------------------- */}
             <Link
               href="/account"
-              // <button
               className="group/btn inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              {/* <RxPerson className="group-hover/btn:scale-125 duration-200" /> */}
               <MdOutlinePerson4 className="group-hover/btn:scale-125 duration-200" />
-              {/* </button> */}
             </Link>
 
             {/* -------------------- MENU BTN -------------------- */}
@@ -115,91 +111,38 @@ export default function Navbar() {
               setExpanded(false);
             }}
           >
-            {/* -------------------- personal info if logged in -------------------- */}
+            {/* -------------------- LANGUAGE BUTTON -------------------- */}
             <div
-              id="personal-account"
+              id="language-sm"
               className="container mx-auto block lg:hidden w-full rounded-lg px-4 py-3 bg-gray-50 dark:bg-zinc-950 text-center"
-              onClick={(e) => {
-                // e.stopPropagation();
-                // e.preventDefault();
-              }}
+              onClick={(e) => {}}
             >
-              {/* TODO: add lgin logic and change static data to user */}
-              {true ? (
-                <>
-                  <div className="flex w-full gap-2 justify-center items-center max-h-40">
-                    {/* <div className="flex justify-center w-1/2">
-                      <img
-                        className="w-full md:w-1/2 object-contain aspect-square"
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                        alt="me"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-around m-2">
-                      <h2 className="fs-3 fw-bold">username</h2>
-                      <h3 className="fs-6">@username</h3>
-                      <div className="fs-6">
-                        <BsGeoAlt className="inline-block me-1" />
-                        Damascus
-                      </div>
-                    </div> */}
-                    {/* -------------------- LANGUAGE BUTTON -------------------- */}
-                    <div className="flex flex-row w-full justify-around m-2">
-                      {locales.map((language) => (
-                        <Button
-                          key={language}
-                          className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
-                          disabled={locale === language ? true : false}
-                          onClick={() => {
-                            replace({ pathname, query }, asPath, {
-                              locale: language,
-                            });
-                            document.documentElement.dir =
-                              language === "ar" ? "rtl" : "ltr";
-                          }}
-                        >
-                          {language}
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-                  <hr className="mb-3" />
-                </>
-              ) : (
-                <div className="flex gap-3 md:gap-5 justify-center">
-                  <Link
-                    // onClick={() => setExpanded(false)}
-                    // href="/auth/signin"
-                    href="#"
-                    className="w-full md:w-1/2 mx-auto"
+              <div className="flex flex-row w-full justify-around m-2">
+                {locales.map((language) => (
+                  <Button
+                    key={language}
+                    className="w-full mx-1 p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:bg-blue-300 dark:disabled:bg-blue-300"
+                    disabled={locale === language ? true : false}
+                    onClick={() => {
+                      replace({ pathname, query }, asPath, {
+                        locale: language,
+                      });
+                      document.documentElement.dir =
+                        language === "ar" ? "rtl" : "ltr";
+                    }}
                   >
-                    <Button className="w-full justify-center">
-                      {t("login")}
-                    </Button>
-                  </Link>
-                  {/* <Link
-                // onClick={() => setExpanded(false)}
-                // href="/auth/register"
-                href="#"
-                className="w-1/2 mx-auto"
-              >
-                <Button className="w-full justify-center">
-                  {t("sign_up")}
-                </Button>
-              </Link> */}
-                </div>
-              )}
+                    {language}
+                  </Button>
+                ))}
+              </div>
             </div>
+
             {/* -------------------- MAIN NAVIGATION LIST -------------------- */}
             <ul className="container mx-auto font-medium flex flex-col lg:justify-between text-center p-4 lg:p-0 mt-0 border border-gray-100 bg-gray-50 dark:bg-zinc-950 rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0">
               {links.map((link) => {
                 const Icon = link.icon;
                 return (
-                  <li
-                    key={link.title}
-                    // onClick={() => setExpanded(false)}
-                    className="w-full text-center"
-                  >
+                  <li key={link.title} className="w-full text-center">
                     <Link
                       href={link.href}
                       className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:py-2 lg:px-0 ${

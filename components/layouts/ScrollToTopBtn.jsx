@@ -19,7 +19,7 @@ export default function ScrollToTopBtn() {
     <>
       {showTopBtn && (
         <Button
-          className="fixed bottom-4 right-8 shadow-md rounded-full px-2 py-2"
+          className="fixed bottom-4 end-8 shadow-md rounded-full px-2 py-2"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
