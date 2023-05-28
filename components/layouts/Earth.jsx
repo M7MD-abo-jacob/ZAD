@@ -94,10 +94,3 @@ export default function Earth() {
     </>
   );
 }
-
-// if (window.__theme === "dark") {
-//   earthRef.current.material.map = nightMap;
-// }
-// if (window.__theme !== "dark") {
-//   earthRef.current.material.map = colorMap;
-// }
