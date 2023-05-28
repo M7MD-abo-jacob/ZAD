@@ -15,12 +15,13 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
       className={`wrapper relementative overflow-x-auto mx-auto  ${styles.wrapper} ${wrapperClass}`}
     >
       <table
+        data-aos="zoom-in-up"
         role="table"
         className={`text-sm text-center w-full ${styles.table} ${tableClass}`}
       >
         {caption && (
           <caption role="caption" className="uppercase">
-            {caption}
+            <span data-aos="fade-down">{caption}</span>
           </caption>
         )}
         <thead role="rowgroup" className="text-xs capitalize border-b-2">
@@ -37,6 +38,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
             <tr key={i} role="row">
               {Object.keys(element).map((el, i) => (
                 <td
+                  data-aos="rubber"
                   key={i}
                   data-cell={t(el)}
                   role="cell"

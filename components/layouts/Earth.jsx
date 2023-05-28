@@ -79,7 +79,6 @@ export default function Earth() {
         />
       </mesh>
       {/* -------------------- EARTH -------------------- */}
-      {/* <group rotation={[1, 0, Math.PI / 3]}> */}
       <mesh ref={earthRef} position={position} rotation={[Math.PI / 7, 0, 0]}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
@@ -90,7 +89,6 @@ export default function Earth() {
           roughness={0.7}
         />
       </mesh>
-      {/* </group> */}
     </>
   );
 }

@@ -25,13 +25,15 @@ export default function Adsl() {
         <meta name="description" content={headData.description} />
       </Head>
       <section id="details" className="container mx-auto px-3 md:px-5">
-        <h1 className="text-5xl mb-4 uppercase">{t("common:adsl")}</h1>
+        <h1 data-aos="zoom-in-up" className="text-5xl mb-4 uppercase">
+          {t("common:adsl")}
+        </h1>
         {/* TODO: break lines */}
         <p>{t("adsl:main_p")}</p>
         <ul className="my-2">
           {adslSpecs.map((spec, index) => {
             return (
-              <li key={index}>
+              <li key={index} data-aos="fade-up" data-aos-delay={`${index}00`}>
                 <MdStarBorderPurple500 className="inline text-primary me-2 text-xl mb-1" />
                 <span>{t(`adsl:${spec}`)}</span>
               </li>
@@ -39,6 +41,7 @@ export default function Adsl() {
           })}
         </ul>
         <a
+          data-aos="fade-up"
           href="assets/ZAD-services.pdf"
           download
           className="inline-block mt-5"
@@ -53,7 +56,9 @@ export default function Adsl() {
 
       {/* -------------------- limited-download subscriptions -------------------- */}
       <section id="pricing" className="container mx-auto px-3 md:px-5">
-        <h1 className="text-5xl mb-4 uppercase">{t("adsl:limited")}</h1>
+        <h1 data-aos="zoom-in-up" className="text-5xl mb-4 uppercase">
+          {t("adsl:limited")}
+        </h1>
         <Table data={limitedSubs} caption={t("adsl:limited")} />
       </section>
       <br />
@@ -67,7 +72,9 @@ export default function Adsl() {
 
       {/* -------------------- router setings -------------------- */}
       <section id="router-settings" className="container mx-auto px-3 md:px-5">
-        <h1 className="text-5xl mb-4 uppercase">{t("adsl:router_settings")}</h1>
+        <h1 data-aos="custom-animation" className="text-5xl mb-4 uppercase">
+          {t("adsl:router_settings")}
+        </h1>
         <Table data={routerSettings} caption={t("adsl:router_settings")} />
       </section>
     </>
