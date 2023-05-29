@@ -26,7 +26,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 start-0 w-full z-50 shadow-md shadow-zinc-400 dark:shadow-zinc-700">
+    <nav className="fixed top-0 start-0 end-0 z-50 shadow-md shadow-zinc-400 dark:shadow-zinc-700">
       {/* -------------------- TOP BAR -------------------- */}
       <div className=" mx-auto bg-gray-50 dark:bg-zinc-950">
         <div className="container flex items-center justify-between w-full px-4 py-0.5 bg-gray-50 dark:bg-zinc-950 mx-auto">
