@@ -8,7 +8,7 @@ export default function TicketForm() {
   const [cardNumber, setCardNumber] = useState("");
 
   return (
-    <form className="mb-2">
+    <form data-aos="fade-up-left" className="mb-2">
       <label
         htmlFor="email"
         className="block mb-1 text-sm font-medium text-gray-900 dark:text-white"

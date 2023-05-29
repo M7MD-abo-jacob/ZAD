@@ -65,14 +65,16 @@ export default function Adsl() {
 
       {/* -------------------- recharge balance -------------------- */}
       <section id="recharge" className="container mx-auto px-3 md:px-5">
-        <h1 className="text-5xl mb-4 uppercase">{t("adsl:recharge")}</h1>
+        <h1 data-aos="zoom-in-up" className="text-5xl mb-4 uppercase">
+          {t("adsl:recharge")}
+        </h1>
         <Table data={recharge} caption={t("adsl:recharge")} />
       </section>
       <br />
 
       {/* -------------------- router setings -------------------- */}
       <section id="router-settings" className="container mx-auto px-3 md:px-5">
-        <h1 data-aos="custom-animation" className="text-5xl mb-4 uppercase">
+        <h1 data-aos="zoom-in-up" className="text-5xl mb-4 uppercase">
           {t("adsl:router_settings")}
         </h1>
         <Table data={routerSettings} caption={t("adsl:router_settings")} />

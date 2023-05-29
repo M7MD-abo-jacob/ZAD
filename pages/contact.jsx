@@ -19,14 +19,19 @@ export default function ContactPage() {
         <meta name="description" content={headData.description} />
       </Head>
       <section id="contact-us" className="container mx-auto px-3">
-        <h1 className="text-5xl">{t("common:contact")}</h1>
-        <p>{t("contact:contact_p")}</p>
+        <h1 data-aos="zoom-in-up" className="text-5xl">
+          {t("common:contact")}
+        </h1>
+        <p data-aos="zoom-in">{t("contact:contact_p")}</p>
         <br />
 
-        <h2 className="text-2xl mb-3">{t("contact:contact_us")}</h2>
+        <h2 data-aos="zoom-in-up" className="text-2xl mb-3">
+          {t("contact:contact_us")}
+        </h2>
         <ul>
           {contactMethods.map((method) => (
             <li
+              data-aos="zoom-in-up"
               key={method.title}
               className="flex rounded-lg mb-6 flex-col md:flex-row items-stretch bg-accent-semitransparent"
             >
@@ -34,15 +39,20 @@ export default function ContactPage() {
                 {t(`contact:${method.title}`)}
               </h3>
               <div className="flex flex-col items-center justify-center flex-1 w-full rounded-b-lg md:rounded-none md:rounded-e-lg text-center md:text-start bg-neutral-500 bg-opacity-25">
-                {method.links.map((link) => (
-                  <Link
-                    href={link.href}
-                    key={link.title}
-                    className="p-1 underline underline-offset-4"
-                  >
-                    {link.title}
-                  </Link>
-                ))}
+                <ul className="w-full text-center">
+                  {method.links.map((link, index) => (
+                    <li key={link.title}>
+                      <Link
+                        data-aos="jiggle"
+                        data-aos-delay={`${index}00`}
+                        href={link.href}
+                        className="block w-full p-1 underline underline-offset-4"
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </li>
           ))}

@@ -38,10 +38,15 @@ export default function NewTicketPage() {
         <meta name="description" content={headData.description} />
       </Head>
       <section className="container mx-auto">
-        <h2 className="text-center text-xl font-bold uppercase">
+        <h2
+          data-aos="zoom-in-up"
+          className="text-center text-xl font-bold uppercase"
+        >
           {t("newTicket:enter_details")}
         </h2>
+        {/* TODO: add contition: if error */}
         <p
+          data-aos="zoom-in-up"
           id="error"
           className="text-center text-red-600 dark:text-red-400 font-semibold capitalize"
         >
@@ -58,7 +63,7 @@ export default function NewTicketPage() {
           className={`${styles.ticket_form} flex flex-col w-full my-4`}
         >
           {/* -------------------- NAME -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="name">{t("newTicket:name")}</label>
             <input
               type="text"
@@ -77,7 +82,7 @@ export default function NewTicketPage() {
             />
           </div>
           {/* -------------------- EMAIL -------------------- */}
-          <div className={`label-input `}>
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="email">{t("newTicket:email")}</label>
             <input
               type="text"
@@ -96,7 +101,7 @@ export default function NewTicketPage() {
             />
           </div>
           {/* -------------------- USER_NAME -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="user_name">{t("newTicket:user_name")}</label>
             <input
               type="text"
@@ -115,7 +120,7 @@ export default function NewTicketPage() {
             />
           </div>
           {/* -------------------- PHONE -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="phone">{t("newTicket:phone")}</label>
             <input
               type="text"
@@ -133,7 +138,7 @@ export default function NewTicketPage() {
             />
           </div>
           {/* -------------------- PHONE_EXT -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="phone_ext">{t("newTicket:phone_ext")}</label>
             <select
               name="phone_ext"
@@ -167,7 +172,7 @@ export default function NewTicketPage() {
             </select>
           </div>
           {/* -------------------- MOBILE_NO -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="mobile_no">{t("newTicket:mobile_no")}</label>
             <input
               type="text"
@@ -185,7 +190,7 @@ export default function NewTicketPage() {
             />
           </div>
           {/* -------------------- deptID -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="deptId">{t("newTicket:deptId")}</label>
             <select
               name="deptId"
@@ -214,7 +219,7 @@ export default function NewTicketPage() {
             </select>
           </div>
           {/* -------------------- SUBJECT -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="subject">{t("newTicket:subject")}</label>
             <input
               type="text"
@@ -233,7 +238,7 @@ export default function NewTicketPage() {
             />
           </div>
           {/* -------------------- MESSAGE -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="message">{t("newTicket:message")}</label>
             <textarea
               name="message"
@@ -253,7 +258,7 @@ export default function NewTicketPage() {
             ></textarea>
           </div>
           {/* -------------------- PRI -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="pri">{t("newTicket:pri")}</label>
             <select
               name="pri"
@@ -273,7 +278,7 @@ export default function NewTicketPage() {
             </select>
           </div>
           {/* -------------------- CAPTCHA -------------------- */}
-          <div className="label-input">
+          <div className="label-input" data-aos="zoom-in-up">
             <label htmlFor="captcha">{t("newTicket:captcha")}</label>
             <img src="/assets/captcha.png" border="0" align="left" />
             <input
@@ -296,6 +301,7 @@ export default function NewTicketPage() {
           </div>
           {/* -------------------- BUTTONS -------------------- */}
           <div
+            data-aos="zoom-in-up"
             className="flex flex-col md:flex-row gap-5 justify-center mt-5 rounded-md shadow-sm"
             role="group"
           >

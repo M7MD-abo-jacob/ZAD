@@ -38,7 +38,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
             <tr key={i} role="row">
               {Object.keys(element).map((el, i) => (
                 <td
-                  data-aos="rubber"
+                  data-aos="jiggle"
                   key={i}
                   data-cell={t(el)}
                   role="cell"

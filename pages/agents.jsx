@@ -48,12 +48,12 @@ export default function Agents({ agents, governates }) {
       </Head>
       <section id="search-form" className="container px-3 mx-auto">
         <div className="container flex flex-col">
-          <h1 className="capitalize text-5xl w-full mb-4">
+          <h1 data-aos="zoom-in-up" className="capitalize text-5xl w-full mb-4">
             {t("common:agents")}
           </h1>
 
           <div>
-            <h2 className="text-3xl mb-2 capitalize">
+            <h2 data-aos="zoom-in-up" className="text-3xl mb-2 capitalize">
               {t("agents:services_header")}
             </h2>
             <ol className="list-decimal ps-5">
@@ -63,10 +63,18 @@ export default function Agents({ agents, governates }) {
               <AgentsService service={"change_speed"}>
                 <p>{t("agents:change_speed_details")}</p>
                 <ul className="list-disc ps-5">
-                  <li>{t("agents:change_speed_1")}</li>
-                  <li>{t("agents:change_speed_2")}</li>
-                  <li>{t("agents:change_speed_3")}</li>
-                  <li>{t("agents:change_speed_4")}</li>
+                  <li data-aos="fade-right" data-aos-delay="50">
+                    {t("agents:change_speed_1")}
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="100">
+                    {t("agents:change_speed_2")}
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="150">
+                    {t("agents:change_speed_3")}
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="200">
+                    {t("agents:change_speed_4")}
+                  </li>
                 </ul>
               </AgentsService>
               <AgentsService service={"stop_service"}>
@@ -77,7 +85,10 @@ export default function Agents({ agents, governates }) {
           <br />
 
           <div className="w-full">
-            <h1 className="capitalize text-5xl w-full mb-4">
+            <h1
+              data-aos="zoom-in-up"
+              className="capitalize text-5xl w-full mb-4"
+            >
               {t("agents:search")}
             </h1>
             <form className="w-full">
@@ -100,7 +111,10 @@ export default function Agents({ agents, governates }) {
             </form>
           </div>
           {!area && (
-            <p className="text-red-700 dark:text-red-500 text-center font-bold">
+            <p
+              data-aos="zoom-in-up"
+              className="text-red-700 dark:text-red-500 text-center font-bold"
+            >
               {t("agents:directions")}
             </p>
           )}
@@ -111,7 +125,9 @@ export default function Agents({ agents, governates }) {
         {/* TODO: diferent h1 */}
         {agents?.length > 0 && (
           <>
-            <h1 className="text-5xl mb-3">{t("agents:area_agents")}</h1>
+            <h1 data-aos="zoom-in-up" className="text-5xl mb-3 capitalize">
+              {t("agents:area_agents")}
+            </h1>
             <Table
               caption={t("agents:area_agents")}
               data={agents}

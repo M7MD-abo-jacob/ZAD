@@ -129,11 +129,11 @@ footer .accent {
   }
 }
 
-[data-aos="rubber"] {
+[data-aos="jiggle"] {
   opacity: 0;
   transition-property: transform, opacity;
 }
-[data-aos="rubber"].aos-animate {
+[data-aos="jiggle"].aos-animate {
   animation: stretch 1s linear;
   opacity: 1;
 }

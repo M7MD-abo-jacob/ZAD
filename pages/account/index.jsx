@@ -28,28 +28,44 @@ export default function Account() {
       <section id="details" className="container mx-auto px-3 md:px-5">
         <dl className="divide-y divide-gray-600 dark:divide-gray-400">
           <div className="flex flex-col md:flex-row md:justify-between md:flex-auto max-w-2xl mx-auto py-3">
-            <dt className="mb-1 md:text-lg text-muted">{t("account:name")}</dt>
-            <dd className="text-lg font-semibold">mohammad</dd>
+            <dt data-aos="zoom-in-left" className="mb-1 md:text-lg text-muted">
+              {t("account:name")}
+            </dt>
+            <dd data-aos="zoom-in-right" className="text-lg font-semibold">
+              mohammad
+            </dd>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between max-w-2xl mx-auto py-3">
-            <dt className="mb-1 md:text-lg text-muted">
+            <dt data-aos="zoom-in-left" className="mb-1 md:text-lg text-muted">
               {t("account:username")}
             </dt>
-            <dd className="text-lg font-semibold">زاد</dd>
+            <dd data-aos="zoom-in-right" className="text-lg font-semibold">
+              زاد
+            </dd>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between max-w-2xl mx-auto py-3">
-            <dt className="mb-1 md:text-lg text-muted">
+            <dt data-aos="zoom-in-left" className="mb-1 md:text-lg text-muted">
               {t("account:paid_until")}
             </dt>
-            <dd className="text-lg font-semibold">2023-09-15</dd>
+            <dd data-aos="zoom-in-right" className="text-lg font-semibold">
+              2023-09-15
+            </dd>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between max-w-2xl mx-auto py-3">
-            <dt className="mb-1 md:text-lg text-muted">{t("account:speed")}</dt>
-            <dd className="text-lg font-semibold">1 Mb/s</dd>
+            <dt data-aos="zoom-in-left" className="mb-1 md:text-lg text-muted">
+              {t("account:speed")}
+            </dt>
+            <dd data-aos="zoom-in-right" className="text-lg font-semibold">
+              1 Mb/s
+            </dd>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between max-w-2xl mx-auto py-3">
-            <dt className="mb-1 md:text-lg text-muted">{t("account:phone")}</dt>
-            <dd className="text-lg font-semibold">963991234567</dd>
+            <dt data-aos="zoom-in-left" className="mb-1 md:text-lg text-muted">
+              {t("account:phone")}
+            </dt>
+            <dd data-aos="zoom-in-right" className="text-lg font-semibold">
+              963991234567
+            </dd>
           </div>
         </dl>
       </section>

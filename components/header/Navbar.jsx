@@ -29,7 +29,7 @@ export default function Navbar() {
     <nav className="fixed top-0 start-0 w-full z-50 shadow-md shadow-zinc-400 dark:shadow-zinc-700">
       {/* -------------------- TOP BAR -------------------- */}
       <div className=" mx-auto bg-gray-50 dark:bg-zinc-950">
-        <div className="container flex items-center justify-between w-full px-4 py-2 bg-gray-50 dark:bg-zinc-950 mx-auto">
+        <div className="container flex items-center justify-between w-full px-4 py-0.5 bg-gray-50 dark:bg-zinc-950 mx-auto">
           <Link href="/" className="flex items-center">
             <Image
               src={logoImg}
@@ -142,13 +142,20 @@ export default function Navbar() {
               {links.map((link) => {
                 const Icon = link.icon;
                 return (
-                  <li key={link.title} className="w-full text-center">
+                  <li
+                    key={link.title}
+                    className={`w-full text-center ${
+                      link.href === pathname
+                        ? "lg:border-b-4 lg:border-primary"
+                        : "hover:lg:border-b-4 hover:lg:border-accent"
+                    }`}
+                  >
                     <Link
                       href={link.href}
-                      className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:py-2 lg:px-0 ${
+                      className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:py-1 lg:px-0 dark:text-white lg:hover:text-accent transition-all duration-200 ${
                         link.href === pathname
-                          ? " text-white bg-primary lg:bg-transparent lg:text-primary dark:text-white lg:dark:text-primary font-bold"
-                          : "text-gray-900 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-accent dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
+                          ? "text-white bg-primary lg:bg-transparent lg:text-primary font-bold"
+                          : "text-gray-900 lg:border-0 hover:bg-gray-300 dark:hover:bg-gray-700  "
                       }`}
                     >
                       <Icon className="block lg:hidden" />

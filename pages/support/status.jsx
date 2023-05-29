@@ -20,9 +20,17 @@ export default function TicketsPage() {
         <meta name="description" content={headData.description} />
       </Head>
       <section className="container mx-auto px-4 ">
-        <h1 className="text-5xl mb-2">{t("support:status_header")}</h1>
-        <p className="mb-2">{t("support:status_paragraph")}</p>
-        <Link href="/support/new" className="inline-block">
+        <h1 data-aos="zoom-in-up" className="text-5xl mb-2">
+          {t("support:status_header")}
+        </h1>
+        <p data-aos="zoom-in-up" className="mb-2">
+          {t("support:status_paragraph")}
+        </p>
+        <Link
+          data-aos="zoom-in-up"
+          href="/support/new"
+          className="inline-block"
+        >
           <Button className="mb-5">{t("support:new_header")}</Button>
         </Link>
         <TicketForm />
