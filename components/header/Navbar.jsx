@@ -32,6 +32,7 @@ export default function Navbar() {
         <div className="container flex items-center justify-between w-full px-4 py-0.5 bg-gray-50 dark:bg-zinc-950 mx-auto">
           <Link href="/" className="flex items-center">
             <Image
+              data-aos="zoom-in"
               src={logoImg}
               className="me-3"
               alt={t("brand")}
@@ -41,6 +42,7 @@ export default function Navbar() {
           <div className="flex items-center">
             {/* -------------------- LANGUAGE BTN -------------------- */}
             <button
+              data-aos="zoom-in"
               type="button"
               className="group/btn hidden lg:inline-flex items-center p-2 ms-0 md:ms-3 text-4xl font-medium text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
               onClick={() => {
@@ -56,6 +58,7 @@ export default function Navbar() {
             </button>
             {/* -------------------- DARK THEME BTN -------------------- */}
             <button
+              data-aos="zoom-in"
               onClick={() => {
                 setDarkChecked((prev) => !prev);
                 const newTheme = window.__theme === "dark" ? "light" : "dark";
@@ -72,6 +75,7 @@ export default function Navbar() {
             </button>
             {/* -------------------- ACCOUNT BTN -------------------- */}
             <Link
+              data-aos="zoom-in"
               href="/account"
               className="group/btn inline-flex items-center p-2 ms-0 md:ms-3 text-4xl text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
@@ -80,6 +84,7 @@ export default function Navbar() {
 
             {/* -------------------- MENU BTN -------------------- */}
             <button
+              data-aos="zoom-in"
               onClick={() => setExpanded((prev) => !prev)}
               data-collapse-toggle="navbar-default"
               type="button"
@@ -139,15 +144,17 @@ export default function Navbar() {
 
             {/* -------------------- MAIN NAVIGATION LIST -------------------- */}
             <ul className="container mx-auto font-medium flex flex-col lg:justify-between text-center p-4 lg:p-0 mt-0 border border-gray-100 bg-gray-50 dark:bg-zinc-950 rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0">
-              {links.map((link) => {
+              {links.map((link, index) => {
                 const Icon = link.icon;
                 return (
                   <li
+                    data-aos="fade-down"
+                    data-aos-delay={index * 100 + 50}
                     key={link.title}
-                    className={`w-full text-center ${
+                    className={`w-full text-center lg:border-b-4 ${
                       link.href === pathname
-                        ? "lg:border-b-4 lg:border-primary"
-                        : "hover:lg:border-b-4 hover:lg:border-accent"
+                        ? "lg:border-primary"
+                        : "lg:border-transparent hover:lg:border-accent"
                     }`}
                   >
                     <Link
@@ -155,7 +162,7 @@ export default function Navbar() {
                       className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:py-1 lg:px-0 dark:text-white lg:hover:text-accent transition-all duration-200 ${
                         link.href === pathname
                           ? "text-white bg-primary lg:bg-transparent lg:text-primary font-bold"
-                          : "text-gray-900 lg:border-0 hover:bg-gray-300 dark:hover:bg-gray-700  "
+                          : "text-gray-900 lg:border-0 hover:bg-gray-300 dark:hover:bg-gray-700 focus:bg-gray-300 dark:focus:bg-gray-700 "
                       }`}
                     >
                       <Icon className="block lg:hidden" />

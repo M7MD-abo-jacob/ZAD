@@ -9,6 +9,7 @@ import limitedSubs from "@/data/limitedSubs";
 import recharge from "@/data/recharge";
 import routerSettings from "@/data/routerSettings";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Adsl() {
   const { t } = useTranslation(["common", "adsl"]);
@@ -29,28 +30,32 @@ export default function Adsl() {
           {t("common:adsl")}
         </h1>
         {/* TODO: break lines */}
-        <p>{t("adsl:main_p")}</p>
+        <p data-aos="zoom-in-up">{t("adsl:main_p")}</p>
         <ul className="my-2">
           {adslSpecs.map((spec, index) => {
             return (
-              <li key={index} data-aos="fade-up" data-aos-delay={`${index}00`}>
+              <li
+                key={index}
+                data-aos="zoom-in-up"
+                data-aos-delay={index * 150}
+              >
                 <MdStarBorderPurple500 className="inline text-primary me-2 text-xl mb-1" />
                 <span>{t(`adsl:${spec}`)}</span>
               </li>
             );
           })}
         </ul>
-        <a
+        <Link
           data-aos="fade-up"
           href="assets/ZAD-services.pdf"
           download
           className="inline-block mt-5"
         >
           <Button className="font-bold">
-            <BsFiletypePdf className="text-2xl" />
+            <BsFiletypePdf className="group-hover/link:animate-heart-beat text-2xl" />
             {t("adsl:details")}
           </Button>
-        </a>
+        </Link>
       </section>
       <br />
 

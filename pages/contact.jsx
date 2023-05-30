@@ -44,7 +44,7 @@ export default function ContactPage() {
                     <li key={link.title}>
                       <Link
                         data-aos="jiggle"
-                        data-aos-delay={`${index}00`}
+                        data-aos-delay={index * 100}
                         href={link.href}
                         className="block w-full p-1 underline underline-offset-4"
                       >
