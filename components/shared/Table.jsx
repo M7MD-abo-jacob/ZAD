@@ -1,7 +1,14 @@
 import { useTranslation } from "next-i18next";
 import styles from "@/styles/Table.module.css";
+import Link from "next/link";
 
-export default function Table({ data, caption, wrapperClass, tableClass }) {
+export default function Table({
+  data,
+  caption,
+  wrapperClass,
+  tableClass,
+  dataAos,
+}) {
   const { t } = useTranslation();
 
   const priceFormatter = new Intl.NumberFormat("en-US", {
@@ -12,7 +19,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
 
   return (
     <div
-      className={`wrapper relementative overflow-x-auto mx-auto  ${styles.wrapper} ${wrapperClass}`}
+      className={`wrapper relementative overflow-x-auto mx-auto shadow-2xl shadow-zinc-300 dark:shadow-zinc-800 ${styles.wrapper} ${wrapperClass}`}
     >
       <table
         data-aos="zoom-in-up"
@@ -38,7 +45,7 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
             <tr key={i} role="row">
               {Object.keys(element).map((el, i) => (
                 <td
-                  data-aos="jiggle"
+                  data-aos={dataAos || "jiggle"}
                   key={i}
                   data-cell={t(el)}
                   role="cell"
@@ -52,13 +59,13 @@ export default function Table({ data, caption, wrapperClass, tableClass }) {
                       {element[el].map((i) =>
                         el.split(":")[1] === "phones" ? (
                           <li key={i}>
-                            <a
+                            <Link
                               target="_blank"
                               href={`tel:${i}`}
-                              className="leading-7 p-2 underline underline-offset-4"
+                              className="leading-7 py-1 px-4 underline underline-offset-4"
                             >
                               {i}
-                            </a>
+                            </Link>
                           </li>
                         ) : (
                           <li key={i}>{i}</li>

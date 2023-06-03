@@ -31,7 +31,6 @@
 }
 
 .table {
-  margin: 1em 0;
   border-collapse: collapse;
 }
 
@@ -69,6 +68,7 @@
 }
 
 .wrapper {
+  /* margin: 1rem 0; */
   overflow: hidden;
 }
 

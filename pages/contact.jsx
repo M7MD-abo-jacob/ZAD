@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
-import contactMethods from "@/data/contactMethods";
 import Head from "next/head";
+import contactMethods from "@/data/contactMethods";
 
 export default function ContactPage() {
   const { t } = useTranslation(["common", "contact"]);
@@ -19,13 +19,13 @@ export default function ContactPage() {
         <meta name="description" content={headData.description} />
       </Head>
       <section id="contact-us" className="container mx-auto px-3">
-        <h1 data-aos="zoom-in-up" className="text-5xl">
+        <h1 data-aos="zoom-in-up" className="text-5xl uppercase">
           {t("common:contact")}
         </h1>
         <p data-aos="zoom-in">{t("contact:contact_p")}</p>
         <br />
 
-        <h2 data-aos="zoom-in-up" className="text-2xl mb-3">
+        <h2 data-aos="zoom-in-up" className="text-2xl mb-3 capitalize">
           {t("contact:contact_us")}
         </h2>
         <ul>
@@ -46,7 +46,7 @@ export default function ContactPage() {
                         data-aos="jiggle"
                         data-aos-delay={index * 100}
                         href={link.href}
-                        className="block w-full p-1 underline underline-offset-4"
+                        className="block w-1/2 mx-auto py-1 px-5 underline underline-offset-4"
                       >
                         {link.title}
                       </Link>

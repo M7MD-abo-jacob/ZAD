@@ -1,10 +1,10 @@
+import Head from "next/head";
+import { useReducer } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useReducer } from "react";
+import { BiSend, BiTrash } from "react-icons/bi";
 import Button from "@/components/shared/Button";
 import styles from "@/styles/NewTicket.module.css";
-import { BiSend, BiTrash } from "react-icons/bi";
-import Head from "next/head";
 
 const initialState = {
   name: "",
@@ -40,7 +40,7 @@ export default function NewTicketPage() {
       <section className="container mx-auto">
         <h2
           data-aos="zoom-in-up"
-          className="text-center text-xl font-bold uppercase"
+          className="text-center text-2xl font-bold uppercase"
         >
           {t("newTicket:enter_details")}
         </h2>
@@ -375,3 +375,323 @@ function submit(reducerState) {
     captcha: reducerState.captcha,
   });
 }
+
+// --------------------- TODO:??? ---------------------
+
+// function trim(txt) {
+//   while (txt.indexOf(" ") == 0) {
+//     txt = txt.substr(1);
+//   }
+//   while (txt.substr(txt.length - 1) == " ") {
+//     txt = txt.substr(0, txt.length - 1);
+//   }
+//   return txt;
+// }
+
+// function get_language(val) {
+//   var inputText = val;
+//   inputText = inputText.toLowerCase();
+//   for (i = 0; i < inputText.length; i++) {
+//     if (
+//       inputText.charAt(i) != "a" &&
+//       inputText.charAt(i) != "b" &&
+//       inputText.charAt(i) != "c" &&
+//       inputText.charAt(i) != "d" &&
+//       inputText.charAt(i) != "e" &&
+//       inputText.charAt(i) != "f" &&
+//       inputText.charAt(i) != "g" &&
+//       inputText.charAt(i) != "h" &&
+//       inputText.charAt(i) != "i" &&
+//       inputText.charAt(i) != "j" &&
+//       inputText.charAt(i) != "k" &&
+//       inputText.charAt(i) != "l" &&
+//       inputText.charAt(i) != "m" &&
+//       inputText.charAt(i) != "n" &&
+//       inputText.charAt(i) != "o" &&
+//       inputText.charAt(i) != "p" &&
+//       inputText.charAt(i) != "q" &&
+//       inputText.charAt(i) != "r" &&
+//       inputText.charAt(i) != "s" &&
+//       inputText.charAt(i) != "t" &&
+//       inputText.charAt(i) != "u" &&
+//       inputText.charAt(i) != "v" &&
+//       inputText.charAt(i) != "w" &&
+//       inputText.charAt(i) != "x" &&
+//       inputText.charAt(i) != "y" &&
+//       inputText.charAt(i) != "z" &&
+//       inputText.charAt(i) != " " &&
+//       inputText.charAt(i) != "0" &&
+//       inputText.charAt(i) != "1" &&
+//       inputText.charAt(i) != "2" &&
+//       inputText.charAt(i) != "3" &&
+//       inputText.charAt(i) != "4" &&
+//       inputText.charAt(i) != "5" &&
+//       inputText.charAt(i) != "6" &&
+//       inputText.charAt(i) != "7" &&
+//       inputText.charAt(i) != "8" &&
+//       inputText.charAt(i) != "9" &&
+//       inputText.charAt(i) != "\r" &&
+//       inputText.charAt(i) != "\n" &&
+//       inputText.charAt(i) != "!" &&
+//       inputText.charAt(i) != '"' &&
+//       inputText.charAt(i) != "#" &&
+//       inputText.charAt(i) != "$" &&
+//       inputText.charAt(i) != "%" &&
+//       inputText.charAt(i) != "^" &&
+//       inputText.charAt(i) != "&" &&
+//       inputText.charAt(i) != "'" &&
+//       inputText.charAt(i) != "(" &&
+//       inputText.charAt(i) != ")" &&
+//       inputText.charAt(i) != "*" &&
+//       inputText.charAt(i) != "+" &&
+//       inputText.charAt(i) != "," &&
+//       inputText.charAt(i) != "-" &&
+//       inputText.charAt(i) != "." &&
+//       inputText.charAt(i) != "/" &&
+//       inputText.charAt(i) != "@" &&
+//       inputText.charAt(i) != "~" &&
+//       inputText.charAt(i) != "_" &&
+//       inputText.charAt(i) != "|" &&
+//       inputText.charAt(i) != ":" &&
+//       inputText.charAt(i) != ";" &&
+//       inputText.charAt(i) != "<" &&
+//       inputText.charAt(i) != "=" &&
+//       inputText.charAt(i) != ">" &&
+//       inputText.charAt(i) != "?" &&
+//       inputText.charAt(i) != "[" &&
+//       inputText.charAt(i) != "]" &&
+//       inputText.charAt(i) != "{" &&
+//       inputText.charAt(i) != "}"
+//     ) {
+//       return false;
+//       break;
+//     }
+//   }
+// }
+// function get_language_en(val_en) {
+//   var inputText = val_en;
+//   for (i = 0; i < inputText.length; i++) {
+//     if (
+//       inputText.charAt(i) != " " &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "�" &&
+//       inputText.charAt(i) != "!" &&
+//       inputText.charAt(i) != '"' &&
+//       inputText.charAt(i) != "#" &&
+//       inputText.charAt(i) != "$" &&
+//       inputText.charAt(i) != "%" &&
+//       inputText.charAt(i) != "^" &&
+//       inputText.charAt(i) != "&" &&
+//       inputText.charAt(i) != "'" &&
+//       inputText.charAt(i) != "(" &&
+//       inputText.charAt(i) != ")" &&
+//       inputText.charAt(i) != "*" &&
+//       inputText.charAt(i) != "+" &&
+//       inputText.charAt(i) != "," &&
+//       inputText.charAt(i) != "-" &&
+//       inputText.charAt(i) != "." &&
+//       inputText.charAt(i) != "/" &&
+//       inputText.charAt(i) != "@" &&
+//       inputText.charAt(i) != "~" &&
+//       inputText.charAt(i) != "|" &&
+//       inputText.charAt(i) != ":" &&
+//       inputText.charAt(i) != ";" &&
+//       inputText.charAt(i) != "<" &&
+//       inputText.charAt(i) != "=" &&
+//       inputText.charAt(i) != ">" &&
+//       inputText.charAt(i) != "?" &&
+//       inputText.charAt(i) != "[" &&
+//       inputText.charAt(i) != "]" &&
+//       inputText.charAt(i) != "{" &&
+//       inputText.charAt(i) != "}"
+//     ) {
+//       return false;
+//       break;
+//     }
+//   }
+// }
+// function verify(frm) {
+//   //////////////////////////email
+//   var x = frm.email.value;
+//   var atpos = x.indexOf("@");
+//   var dotpos = x.lastIndexOf(".");
+//   if (frm.email.value == "") {
+//     document.getElementById("email_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... البريد الإلكتروني فارغ !</font>";
+//     accept = false;
+//   } else if (get_language(frm.email.value) == false) {
+//     document.getElementById("email_div").innerHTML =
+//       "<font color='#ff0000'>خطأ.. يرجى إدخال البريد الإلكتروني  باللغة الإنكليزية</font>";
+//     accept = false;
+//   } else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+//     document.getElementById("email_div").innerHTML =
+//       "<font color='#ff0000'>خطأ.. البريد الالكتروني غير صالح</font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("email_div").innerHTML = "";
+//     accept = true;
+//   }
+
+//   //////////////////////////name
+//   if (frm.name.value == "") {
+//     document.getElementById("name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... الاسم فارغ !</font>";
+//     accept = false;
+//   } else if (!isNaN(frm.name.value)) {
+//     document.getElementById("name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... الاسم لا ينبغي أن يكون رقماً</font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("name_div").innerHTML = "";
+//   }
+
+//   //////////////////////////user_name
+//   if (frm.user_name.value == "") {
+//     document.getElementById("user_name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... اسم المستخدم فارغ !</font>";
+//     accept = false;
+//   } else if (get_language(frm.user_name.value) == false) {
+//     document.getElementById("user_name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ.. يرجى إدخال اسم  باللغة الإنكليزية</font>";
+//     accept = false;
+//   } else if (!isNaN(frm.user_name.value.substr(0, 1))) {
+//     document.getElementById("user_name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... اسم المستخدم لا ينبغي أن يحوي رقما في أوله!</font>";
+//     accept = false;
+//   } else if (frm.user_name.value.length < 4) {
+//     document.getElementById("user_name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... اسم المستخدم  يجب أن يحوي على 4 خانات على الأقل !</font>";
+//     accept = false;
+//   } else if (frm.user_name.value.length > 11) {
+//     document.getElementById("user_name_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... اسم المستخدم يجب أن لا يتجاوز  13 خانة  ! </font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("user_name_div").innerHTML = "";
+//   }
+
+//   ////////phone
+//   if (frm.phone.value == "") {
+//     document.getElementById("phone_div").innerHTML = "";
+//   } else if (frm.phone.value == "NaN" || isNaN(parseInt(frm.phone.value))) {
+//     document.getElementById("phone_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... رقم الهاتف ليس رقماً !</font>";
+//     accept = false;
+//   } else if (frm.phone.value.indexOf(" ") != -1) {
+//     document.getElementById("phone_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... رقم الهاتف لا ينبغي أن يحوي أية فراغات !</font>";
+//     accept = false;
+//   } else if (frm.phone.value.indexOf("0") == 0) {
+//     document.getElementById("phone_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... رقم الهاتف لا ينبغي أن يحوي صفراً في أوله أو في ثانيه </font>";
+//     accept = false;
+//   } else if (frm.phone.value.length < 6) {
+//     document.getElementById("phone_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... رقم الهاتف يجب أن يحتوي على ست  خانات على الأقل !</font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("phone_div").innerHTML = "";
+//   }
+//   ////////phone_ext
+//   if (frm.phone_ext.value == "") {
+//     document.getElementById("phone_ext_div").innerHTML = "";
+//   } else {
+//     document.getElementById("phone_ext_div").innerHTML = "";
+//   }
+
+//   ////////mobile_no
+//   if (frm.mobile_no.value == "") {
+//     document.getElementById("mobile_no_div").innerHTML = "";
+//   } else if (
+//     frm.mobile_no.value == "NaN" ||
+//     isNaN(parseInt(frm.mobile_no.value))
+//   ) {
+//     document.getElementById("mobile_no_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... رقم الجوال ليس رقماً !</font>";
+//     accept = false;
+//   } else if (frm.mobile_no.value.indexOf(" ") != -1) {
+//     document.getElementById("mobile_no_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... رقم الجوال لا ينبغي أن يحوي أية فراغات !</font>";
+//     accept = false;
+//   } else if (
+//     frm.mobile_no.value.indexOf("0") == 0 ||
+//     frm.mobile_no.value.indexOf("0") == 1
+//   ) {
+//     document.getElementById("mobile_no_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... رقم الجوال لا ينبغي أن يحتوي صفراً في أوله أو في ثانيه!</font>";
+//     accept = false;
+//   } else if (frm.mobile_no.value.length < 9) {
+//     document.getElementById("mobile_no_div").innerHTML =
+//       "<font color='#ff0000'>خطأ... رقم الجوال يجب أن حتوي على تسع خانات على الأقل !</font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("mobile_no_div").innerHTML = "";
+//   }
+
+//   //////////////////////////message
+//   if (frm.message.value == "") {
+//     document.getElementById("message_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... نص الرسالة فارغ !</font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("message_div").innerHTML = "";
+//   }
+//   if (frm.deptId.value == 0) {
+//     document.getElementById("deptId_div").innerHTML =
+//       "<font color='#ff0000'>خطأ ... اختر القسم !</font>";
+//     accept = false;
+//   } else {
+//     document.getElementById("deptId_div").innerHTML = "";
+//   }
+//   //////////////////////////topicId
+//   /*		if(frm.topicId.value=='')
+// 	  	{
+// 		  document.getElementById("topicId_div").innerHTML="<font color='#ff0000'>خطأ ... اختر طريقة الدعم !</font>";
+// 			accept=false;
+// 		}else
+// 		{
+// 		  document.getElementById("topicId_div").innerHTML='';
+// 		}
+// 		//////////////////////////subject
+// 		if(frm.subject.value==''){
+// 		  document.getElementById("subject_div").innerHTML="<font color='#ff0000'>خطأ ... عنوان الرسالة فارغ !</font>";
+// 		  accept=false;
+// 		}else{
+// 		  document.getElementById("subject_div").innerHTML='';
+// 		}*/
+
+//   return accept;
+// }

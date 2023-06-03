@@ -15,17 +15,17 @@ export default function MyDocument({ __NEXT_DATA__: { locale } }) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
-        {/* <link
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="true"
-        /> */}
-        {/* <link
-          href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&family=Pacifico&display=swap"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
           rel="stylesheet"
         /> */}
         {/* <link rel="icon" href="/favicon.svg" /> */}
@@ -38,7 +38,7 @@ export default function MyDocument({ __NEXT_DATA__: { locale } }) {
         <meta property="og:site_name" content="zad" />
         <meta property="og:url" content="https://zad.sy/" />
       </Head>
-      <body className="transition-all">
+      <body className="transition-all text-lg">
         <script
           dangerouslySetInnerHTML={{
             __html: `

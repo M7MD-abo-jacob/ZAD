@@ -1,9 +1,9 @@
 .ticket_form input,
 .ticket_form select,
 .ticket_form textarea {
-  color: black !important;
-  border-radius: 5px;
-  padding: 5px 10px;
+  /* color: black !important; */
+  /* border-radius: 5px; */
+  /* padding: 5px 10px; */
   /* margin: 0 10px; */
 }
 .ticket_form label {
@@ -14,8 +14,8 @@
 .ticket_form select {
   /* TODO: make colors */
   /* dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white */
-  color: hsl(var(--foreground-rgb)) !important;
-  background-color: hsl(var(--muted-clr));
+  /* color: hsl(var(--foreground-rgb)) !important;
+  background-color: hsl(var(--muted-clr)); */
 }
 
 .ticket_form input,

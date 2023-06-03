@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 export default function Earth() {
   const { locale } = useRouter();
-  const position = locale === "ar" ? [-1, 0, 3] : [1, 0, 3];
+  const position = locale === "ar" ? [-1, 0, 3.3] : [1, 0, 3.3];
   const [colorMap, normalMap, specularMap, cloudsMap, nightMap] = useLoader(
     TextureLoader,
     [
@@ -35,9 +35,11 @@ export default function Earth() {
       if (window.__theme === "dark") {
         console.log("dark");
         earthRef.current.material.map = nightMap;
+        cloudsRef.current.material.opacity = 0.6;
       } else {
         console.log("light");
         earthRef.current.material.map = colorMap;
+        cloudsRef.current.material.opacity = 1;
       }
     };
 

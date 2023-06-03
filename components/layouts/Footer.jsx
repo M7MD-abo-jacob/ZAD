@@ -16,7 +16,7 @@ export default function Footer() {
           <p data-aos="zoom-in-up" className="accent">
             {t("common:subtitle2")}
           </p>
-          <a
+          <Link
             data-aos="zoom-in-up"
             href="https://play.google.com/store/apps/details?id=com.zad_it.zadisp&hl=en_US&pli=1"
             className="w-max mx-auto md:ms-0 my-3 px-3 py-1.5 flex gap-2 items-center rounded-xl border-2 border-black dark:border-white"
@@ -28,7 +28,7 @@ export default function Footer() {
               <div className="text-sm font-extrabold">Download our app</div>
               <div className="text-2xl">Google Play</div>
             </div>
-          </a>
+          </Link>
         </div>
 
         <hr className="w-full md:hidden pb-0" />
@@ -61,12 +61,12 @@ export default function Footer() {
 
       <div data-aos="zoom-in-up" className="footer-copyright text-center py-3">
         <span>&#169; {new Date().getFullYear()}</span>
-        <a
-          href="https://m7md-abo-jacob.github.io/uShopia---my-fake-store/"
+        <Link
+          href="https://zad-isp.vercel.app/"
           className="text-primary hover:text-accent"
         >
           {` ${t("common:author")} `}
-        </a>
+        </Link>
         {t("common:rights")}
       </div>
     </>

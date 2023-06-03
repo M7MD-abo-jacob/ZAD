@@ -1,9 +1,9 @@
-import Button from "@/components/shared/Button";
-import TicketForm from "@/components/shared/TicketForm";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Button from "@/components/shared/Button";
+import TicketForm from "@/components/shared/TicketForm";
 
 export default function TicketsPage() {
   const { t } = useTranslation(["common", "support"]);

@@ -52,7 +52,7 @@ export default function Navbar() {
                 document.documentElement.dir = locale === "ar" ? "ltr" : "rtl";
               }}
             >
-              <span className="group-hover/btn:animate-heart-beat">
+              <span className="group-hover/btn:scale-125 duration-200">
                 {locale === "ar" ? "en" : "ar"}
               </span>
             </button>
@@ -159,9 +159,9 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:py-1 lg:px-0 dark:text-white lg:hover:text-accent transition-all duration-200 ${
+                      className={`flex lg:block w-full items-center lg:text-center gap-4 py-2 ps-3 pe-4 rounded lg:pt-1 lg:pb-0.5 lg:px-0 dark:text-white lg:hover:text-accent transition-all duration-200 ${
                         link.href === pathname
-                          ? "text-white bg-primary lg:bg-transparent lg:text-primary font-bold"
+                          ? "text-white bg-primary lg:bg-transparent lg:text-primary dark:lg:text-primary"
                           : "text-gray-900 lg:border-0 hover:bg-gray-300 dark:hover:bg-gray-700 focus:bg-gray-300 dark:focus:bg-gray-700 "
                       }`}
                     >

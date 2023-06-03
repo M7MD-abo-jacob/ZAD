@@ -7,7 +7,7 @@ export default function AgentsService({ service, children }) {
   const [show, setShow] = useState(false);
   return (
     <li key={service}>
-      <h3 data-aos="fade-down" className="text-xl mt-3 uppercase">
+      <h3 data-aos="fade-down" className="text-xl mt-3 capitalize">
         <span>{t(`agents:${service}_header`)}</span>
         <button
           className="ps-4 underline underline-offset-4 text-gray-600 dark:text-gray-400"

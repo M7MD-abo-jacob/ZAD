@@ -1,3 +1,6 @@
+// this page is server side rendered
+// gets the authorized agents for the selected area before loading for better SEO
+
 import { useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -6,15 +9,17 @@ import Table from "@/components/shared/Table";
 import SelectField from "@/components/shared/SelectField";
 import AgentsService from "@/components/agents/AgentsService";
 import Head from "next/head";
+import getAgentsData from "@/lib/getAgentsData";
+import getGovAreas from "@/lib/getGovAreas";
 
 export default function Agents({ agents, governates }) {
+  const { t } = useTranslation(["common", "agents"]);
+
   const router = useRouter();
   const { query, push } = router;
   const { gov, area } = query;
 
-  const { t } = useTranslation(["common", "agents"]);
   const [selectedGovernate, setSelectedGovernate] = useState(gov);
-
   const [areas, setAreas] = useState([]);
 
   const handleGovernateChange = (value) => {
@@ -28,11 +33,9 @@ export default function Agents({ agents, governates }) {
 
   useEffect(() => {
     // fetch areas for the selected governate every time the user changes the governate
-    // const {data} = axios.get(`/areas`);
-    // setAreas(data);
-
     // TODO: static data, change later
-    setAreas(["latakia", "jableh", "anything", "any"]);
+    const govAreas = getGovAreas(selectedGovernate);
+    setAreas(govAreas);
   }, [selectedGovernate]);
 
   const headData = {
@@ -129,6 +132,7 @@ export default function Agents({ agents, governates }) {
               {t("agents:area_agents")}
             </h1>
             <Table
+              dataAos="fade-up"
               caption={t("agents:area_agents")}
               data={agents}
               wrapperClass="big-table lg:min-w-3/4"
@@ -141,17 +145,8 @@ export default function Agents({ agents, governates }) {
 }
 
 export async function getServerSideProps({ locale, query }) {
-  console.log(query);
-  const gov = query?.gov || "";
-  const area = query?.area || "";
-
-  // fetch data depending on query
-  // const {data: agents} = axios.get(`/agents?gov=${gov}&area=${area}`);
-
-  // TODO: static data, change later
-  const agents = gov && area ? require("@/data/agents.json") : [];
-  const governates = ["damascus", "latakia", "tartus", "homs", "aleppo"];
-
+  // get governates when page first loads and get agents when user select area
+  const { agents, governates } = getAgentsData(query);
   return {
     props: {
       agents,
