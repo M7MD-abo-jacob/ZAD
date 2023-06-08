@@ -1,19 +1,24 @@
+// static page, SSG
+// needs to be rebuilt when data changes
+
+import Head from "next/head";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { MdStarBorderPurple500 } from "react-icons/md";
 import { BsFiletypePdf } from "react-icons/bs";
 import Table from "@/components/shared/Table";
 import Button from "@/components/shared/Button";
-import adslSpecs from "@/data/adslSpecs";
-import limitedSubs from "@/data/limitedSubs";
-import recharge from "@/data/recharge";
-import routerSettings from "@/data/routerSettings";
-import Head from "next/head";
-import Link from "next/link";
 
-export default function Adsl() {
+export default function Adsl({
+  adslSpecs,
+  limitedSubs,
+  recharge,
+  routerSettings,
+}) {
   const { t } = useTranslation(["common", "adsl"]);
 
+  // meta data
   const headData = {
     title: `${t("common:brand")} | ${t("common:adsl")}`,
     description: `${t("adsl:adsl")}`,
@@ -30,7 +35,9 @@ export default function Adsl() {
           {t("common:adsl")}
         </h1>
         {/* TODO: break lines */}
-        <p data-aos="zoom-in-up">{t("adsl:main_p")}</p>
+        <p data-aos="zoom-in-up" style={{ whiteSpace: "pre-line" }}>
+          {t("adsl:main_p")}
+        </p>
         <ul className="my-2">
           {adslSpecs.map((spec, index) => {
             return (
@@ -89,8 +96,17 @@ export default function Adsl() {
 }
 
 export async function getStaticProps({ locale }) {
+  const adslSpecs = require("../data/adslSpecs");
+  const limitedSubs = require("../data/limitedSubs");
+  const recharge = require("../data/recharge");
+  const routerSettings = require("../data/routerSettings");
+
   return {
     props: {
+      adslSpecs,
+      limitedSubs,
+      recharge,
+      routerSettings,
       ...(await serverSideTranslations(locale, ["common", "adsl"])),
     },
   };

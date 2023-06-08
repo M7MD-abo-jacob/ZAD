@@ -1,14 +1,18 @@
-import Button from "@/components/shared/Button";
-import TicketForm from "@/components/shared/TicketForm";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// support / customer service page
+// static page, no data required
+
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { MdPlaylistAdd, MdPlaylistAddCheck } from "react-icons/md";
+import TicketForm from "@/components/shared/TicketForm";
+import Button from "@/components/shared/Button";
 
 export default function SupportPage() {
   const { t } = useTranslation(["common", "support"]);
 
+  // meta data
   const headData = {
     title: `${t("common:brand")} | ${t("common:support")}`,
     description: `${t("support:support_header")}`,

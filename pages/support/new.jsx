@@ -1,3 +1,5 @@
+// new support ticket page
+
 import Head from "next/head";
 import { useReducer } from "react";
 import { useTranslation } from "next-i18next";
@@ -25,6 +27,7 @@ export default function NewTicketPage() {
 
   const [reducerState, dispatch] = useReducer(reducer, initialState);
 
+  // meta data
   const headData = {
     title: `${t("common:brand")} | ${t("common:support")}`,
     description: `${t("newTicket:new_header")}`,

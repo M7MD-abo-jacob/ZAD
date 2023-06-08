@@ -1,3 +1,6 @@
+// main document file
+// contains some language settings, meta data and dark theme function in the body tag
+
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function MyDocument({ __NEXT_DATA__: { locale } }) {
@@ -15,23 +18,12 @@ export default function MyDocument({ __NEXT_DATA__: { locale } }) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-          rel="stylesheet"
-        /> */}
-        {/* <link rel="icon" href="/favicon.svg" /> */}
         <meta
           name="keywords"
-          content="zad, zad isp, isp, syria, internet, adsl"
+          content="zad, isp, syria, internet, service, provider, adsl, wifi, adsl, ethernet"
         />
         <meta name="author" content="Mohammad Kikhia" />
         <meta name="robots" content="index,follow" />
@@ -39,6 +31,8 @@ export default function MyDocument({ __NEXT_DATA__: { locale } }) {
         <meta property="og:url" content="https://zad.sy/" />
       </Head>
       <body className="transition-all text-lg">
+        {/* when user changes theme, it dispatches the themechange event for listeners,
+        changes local __theme variable, and sets the value in localStorage */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

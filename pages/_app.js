@@ -1,7 +1,7 @@
-import { appWithTranslation } from "next-i18next";
-import RootLayout from "@/components/layouts/RootLayout";
 import { useEffect } from "react";
+import { appWithTranslation } from "next-i18next";
 import AOS from "aos";
+import RootLayout from "@/components/layouts/RootLayout";
 import "aos/dist/aos.css";
 import "@/styles/globals.css";
 

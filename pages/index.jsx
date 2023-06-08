@@ -1,7 +1,8 @@
+// the home page
+
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
-import Image from "next/image";
 import Head from "next/head";
 import Earth from "@/components/layouts/Earth";
 import Button from "@/components/shared/Button";
@@ -11,6 +12,7 @@ import { Suspense } from "react";
 export default function Home() {
   const { t } = useTranslation(["common", "home"]);
 
+  // meta data
   const headData = {
     title: `${t("common:brand")} | ${t("common:subtitle2")}`,
     description: `${t("home:brand_subtitle2")}`,
@@ -23,14 +25,17 @@ export default function Home() {
         <meta name="description" content={headData.description} />
       </Head>
       <section className="relative w-full">
+        {/* -------------------- FOREGROUND FOR EARTH FOR THE TEXT TO BE READABLE -------------------- */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-blue-950 opacity-80 z-10"></div>
         <div className="absolute inset-0 opacity-90 z-10">
+          {/* -------------------- EARTH -------------------- */}
           <Canvas>
             <Suspense fallback="loading">
               <Earth />
             </Suspense>
           </Canvas>
         </div>
+        {/* -------------------- MAIN PARAGRAPH -------------------- */}
         <div className="container relative mx-auto px-4 sm:px-6">
           <div className="text-center md:text-start py-10 md:py-12">
             <h1
@@ -56,14 +61,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <br />
-      <br />
-      {/* TODO: wtf */}
-      {/* <Link
-        data-aos="zoom-in-up"
-        href="http://selfcare.zad.sy/adsl/register/step1"
-      >
-      </Link> */}
     </>
   );
 }

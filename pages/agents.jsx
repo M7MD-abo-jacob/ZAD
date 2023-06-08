@@ -2,19 +2,20 @@
 // gets the authorized agents for the selected area before loading for better SEO
 
 import { useEffect, useState } from "react";
+import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Table from "@/components/shared/Table";
 import SelectField from "@/components/shared/SelectField";
 import AgentsService from "@/components/agents/AgentsService";
-import Head from "next/head";
 import getAgentsData from "@/lib/getAgentsData";
 import getGovAreas from "@/lib/getGovAreas";
 
 export default function Agents({ agents, governates }) {
   const { t } = useTranslation(["common", "agents"]);
 
+  // get the governate and area from query, if user looked for agents
   const router = useRouter();
   const { query, push } = router;
   const { gov, area } = query;
@@ -38,6 +39,7 @@ export default function Agents({ agents, governates }) {
     setAreas(govAreas);
   }, [selectedGovernate]);
 
+  // meta data
   const headData = {
     title: `${t("common:brand")} | ${t("common:agents")}`,
     description: `${t("agents:search")}`,
@@ -61,10 +63,14 @@ export default function Agents({ agents, governates }) {
             </h2>
             <ol className="list-decimal ps-5">
               <AgentsService service={"recharge"}>
-                <p>{t("agents:recharge_details")}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {t("agents:recharge_details")}
+                </p>
               </AgentsService>
               <AgentsService service={"change_speed"}>
-                <p>{t("agents:change_speed_details")}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {t("agents:change_speed_details")}
+                </p>
                 <ul className="list-disc ps-5">
                   <li data-aos="fade-right" data-aos-delay="50">
                     {t("agents:change_speed_1")}
@@ -81,7 +87,9 @@ export default function Agents({ agents, governates }) {
                 </ul>
               </AgentsService>
               <AgentsService service={"stop_service"}>
-                <p>{t("agents:stop_service_details")}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {t("agents:stop_service_details")}
+                </p>
               </AgentsService>
             </ol>
           </div>
@@ -146,7 +154,9 @@ export default function Agents({ agents, governates }) {
 
 export async function getServerSideProps({ locale, query }) {
   // get governates when page first loads and get agents when user select area
+  // this is done to separate functionality in the lib directory for easy maintenance
   const { agents, governates } = getAgentsData(query);
+
   return {
     props: {
       agents,

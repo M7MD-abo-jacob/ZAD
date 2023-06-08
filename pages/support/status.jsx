@@ -1,3 +1,6 @@
+// check support ticket status page
+// should be SSR page but i don't have the data
+
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -8,6 +11,7 @@ import TicketForm from "@/components/shared/TicketForm";
 export default function TicketsPage() {
   const { t } = useTranslation(["common", "support"]);
 
+  // meta data
   const headData = {
     title: `${t("common:brand")} | ${t("common:support")}`,
     description: `${t("support:status_header")}`,
@@ -23,7 +27,11 @@ export default function TicketsPage() {
         <h1 data-aos="zoom-in-up" className="text-5xl mb-2">
           {t("support:status_header")}
         </h1>
-        <p data-aos="zoom-in-up" className="mb-2">
+        <p
+          data-aos="zoom-in-up"
+          className="mb-2"
+          style={{ whiteSpace: "pre-line" }}
+        >
           {t("support:status_paragraph")}
         </p>
         <Link
